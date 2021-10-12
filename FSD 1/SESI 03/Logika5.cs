@@ -1,28 +1,26 @@
 using System;
 
-class Logika5{
+public class Logika5{
 
     public static void Main(string[] args){
 
-        // int nilai;
-        // nilai = 7;
-
-        // string bulan = DateTime.Now.Tostring();
+        int bulan, pilih;
         DateTime now = DateTime.Now;
-        // bulan = now.Month;
 
         Console.WriteLine("Mau apa?[pilih angka]");
         Console.WriteLine("1. Convert bulan?");
         Console.WriteLine("2. ini bulan apa?");
-        Console.WriteLine("Pilih : ");
-        int pilih = int.Parse(Console.ReadLine());
+        Console.Write("Pilih : ");
+        pilih = int.Parse(Console.ReadLine());
+
         if (pilih == 1){
             Console.WriteLine("Masukkan angka bulan : ");
-            int bulan = int.Parse(Console.ReadLine());
+            bulan = int.Parse(Console.ReadLine());
         }
-        // else {
-        //     int bulan = String.Parse(now.Month);
-        // }
+        else {
+            bulan = now.Month;
+        }
+        
         switch (bulan)
         {
             case 1:{
@@ -51,7 +49,6 @@ class Logika5{
             }
             case 7:{
                 Console.WriteLine("Juli");
-                Console.WriteLine("{0}", now.Month);
                 break;
             }
             case 8:{

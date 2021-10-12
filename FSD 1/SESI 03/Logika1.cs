@@ -1,6 +1,6 @@
 using System;
 
-class Logika1{
+public class Logika1{
 
     public static void Main(string[] args){
 
