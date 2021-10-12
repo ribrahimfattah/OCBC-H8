@@ -1,0 +1,16 @@
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.exe
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.deps.json
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.runtimeconfig.json
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.runtimeconfig.dev.json
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.dll
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\ref\dotnet.dll
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\bin\Debug\net5.0\dotnet.pdb
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.csproj.AssemblyReference.cache
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.GeneratedMSBuildEditorConfig.editorconfig
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.AssemblyInfoInputs.cache
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.AssemblyInfo.cs
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.csproj.CoreCompileInputs.cache
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.dll
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\ref\dotnet.dll
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.pdb
+F:\WORK\HACKTIV8\SESI\SESI1\dotnet\obj\Debug\net5.0\dotnet.genruntimeconfig.cache

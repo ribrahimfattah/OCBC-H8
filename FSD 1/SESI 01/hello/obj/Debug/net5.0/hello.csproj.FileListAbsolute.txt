@@ -1,0 +1,16 @@
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.csproj.AssemblyReference.cache
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.GeneratedMSBuildEditorConfig.editorconfig
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.AssemblyInfoInputs.cache
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.AssemblyInfo.cs
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.csproj.CoreCompileInputs.cache
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.exe
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.deps.json
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.runtimeconfig.json
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.runtimeconfig.dev.json
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.dll
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\ref\hello.dll
+F:\WORK\HACKTIV8\SESI\SESI1\hello\bin\Debug\net5.0\hello.pdb
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.dll
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\ref\hello.dll
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.pdb
+F:\WORK\HACKTIV8\SESI\SESI1\hello\obj\Debug\net5.0\hello.genruntimeconfig.cache
