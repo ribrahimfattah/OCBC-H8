@@ -1,0 +1,20 @@
+#### SELAMAT DATANG DI ASSIGNMENT 1 ####
+
+OOOO CCCC BBBB CCCC     X  X    /\__/\
+O    C    BBBB C         XX    (      )
+O    C    BBBB C         XX     \    /
+000O CCCC BBBB CCCC     X  X     \  /
+
+Nama            : Rasyid Ibrahim Fattah
+Kode Peserta    : FSDO001ONL030
+Alamat          : Semarang
+
+Link Github ; https://github.com/ribrahimfattah/OCBC-H8.git
+
+Panduan Penggunaan :
+1. run menggunakan mono
+2. Terdapat delapan menu 
+3. hanya menggunakan satu file, di dalamnya memanggil fungsi-fungsi
+
+**** HAPPY CODING ****
+**** TERIMA KASIH ****

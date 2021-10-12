@@ -58,7 +58,7 @@ public class String2{
         Console.WriteLine("Indeks kemunculan pertama dari Satu : " + idx);
         
         idx = str2.LastIndexOf("Satu", StringComparison.Ordinal);
-        Console.WriteLine("Indeks kemunculan pertama dari Satu : " + idx);
+        Console.WriteLine("Indeks kemunculan terakhir dari Satu : " + idx);
         
     }
 }
