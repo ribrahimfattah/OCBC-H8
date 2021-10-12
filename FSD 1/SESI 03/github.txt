@@ -1,0 +1,52 @@
+github
+===
+//hapus git di dalam folder/project
+rm -rf .git
+
+//jika ada git di dalam folder/project
+git clean -n
+git rm --cached .
+
+change branch master to main
+---
+git checkout -b main //switch branch
+git branch -D master //delete branch
+git branch --list //list branch
+
+git commit
+---
+git init
+git remote add origin url-github
+git add . //semua file
+git add namafolder/namafile //select file
+git commit -m "first commit"
+git push origin main
+>> push to branch master
+git push origin master
+
+//jika ada update project
+git status // check update
+git add namafolder/namafile //select file
+git commit -m "first commit"
+git pull origin main //disaat pull pastikan check file
+git push origin main
+
+check git
+--
+git config --list
+git config --global --list
+git config --global user.email "email.com"
+git config --global credential.username "usergithub"
+
+cek jika permission denied unable to access
+--
+git config credential.helper
+git config credential.helper store
+git config --global credential.helper manager
+git config --global --unset credential.helper
+
+jika terjadi error di git > fatal: refusing to merge unrelated histories
+lakukan ini > git pull origin main --allow-unrelated-histories
+referensi > https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories-on-rebase
+pull origin
+
