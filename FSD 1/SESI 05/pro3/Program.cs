@@ -109,6 +109,7 @@ namespace pro3{
                             goto main;
                         }else{
                             exit();
+                            break;
                         }
                     }while (ulang == 0);
                     break;

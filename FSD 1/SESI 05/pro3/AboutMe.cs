@@ -6,7 +6,7 @@ namespace pro3
     {
         string nama = "rasyid Ibrahim Fattah";
         string alamat = "Semarang";
-        string note = "tidak bisa diungkapkan dengan kata-kata";
+        string note = "Jangan takut error";
 
         public void Me()
         {

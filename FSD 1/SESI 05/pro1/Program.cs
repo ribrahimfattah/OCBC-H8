@@ -3,8 +3,11 @@
 namespace pro1{
     class Program{
         static void Main(string[] args){
+
             // instant objek
         Laptop laptop1 = new Laptop();
+        
+        string[] daftarMerk = {"Lenovo", "Asus", "Acer", "Dell", "Samsung"};
 
         Console.Write("masukkan merk : ");
         laptop1.merk = Console.ReadLine();
@@ -14,10 +17,6 @@ namespace pro1{
 
         Console.Write("masukkan memory : ");
         laptop1.memory = int.Parse(Console.ReadLine());
-        // akses atribut
-        // laptop1.merk = "Lenovo";
-        // laptop1.ram = 4;
-        // laptop1.memory = 128;
 
         // tampilkan
         Console.WriteLine("\nMerk Laptop adalah {0}", laptop1.merk);
