@@ -1,0 +1,16 @@
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.csproj.AssemblyReference.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.GeneratedMSBuildEditorConfig.editorconfig
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.AssemblyInfoInputs.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.AssemblyInfo.cs
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.csproj.CoreCompileInputs.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.exe
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.deps.json
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.runtimeconfig.json
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.runtimeconfig.dev.json
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\ref\pro3.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\bin\Debug\net5.0\pro3.pdb
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\ref\pro3.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.pdb
+F:\WORK\HACKTIV8\FSD 1\SESI 05\pro3\obj\Debug\net5.0\pro3.genruntimeconfig.cache
