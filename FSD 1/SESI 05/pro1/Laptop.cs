@@ -1,25 +1,36 @@
 using System;
 
-public class Laptop{
+namespace pro1{
 
-    // Attribute/Variable
-    public string merk;
-    public int ram, memory;
+    public class Laptop{
 
-    // method
-    public void Chatting(){
+        // Attribute/Variable
+        public string merk;
+        public int ram, memory;
 
-        Console.WriteLine("\n{0} sedang chatting", this.merk);
+        // method
+        public void Chatting(){
+
+            Console.WriteLine("\n{0} sedang chatting", this.merk);
+        }
+
+        public void Sosmed(){
+
+            Console.WriteLine("{0} sedang sosmed", this.merk);
+        }
+
+        public void OnlineShop(){
+
+            Console.WriteLine("{0} sedang online shop", this.merk);
+        }
+
     }
 
-    public void Sosmed(){
+    public class Upgrade:Laptop{
 
-        Console.WriteLine("{0} sedang sosmed", this.merk);
+        public void UpgradeRam(int ram){
+            this.ram = ram;
+            Console.WriteLine("Ram sudah diupgrade menjadi {0}", ram);
+        }
     }
-
-    public void OnlineShop(){
-
-        Console.WriteLine("{0} sedang online shop", this.merk);
-    }
-
 }

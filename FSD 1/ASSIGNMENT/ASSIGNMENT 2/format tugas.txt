@@ -1,0 +1,28 @@
+Format Tugas
+
+Buat Folder KodePeserta_NamaPeserta_Assigment2
+Buat File Query_Assigment.txt > DISI QUERY NYA
+Export File Query_SQL_EXPORT.sql
+
+NamaPeserta   : NamaAnda
+Kode Peserta  : 001 (Kode PESERTA LENGKAP)
+Tugas         : Assigment 2
+
+
+Screenshot Output Hasil Per Soal
+No. 1 Soal
+Jawaban Query Soal No. 1
+-------------------
+
+Screenshot Output Hasil Per Soal
+No. 2 Soal
+Jawaban Query Soal No. 2
+-------------------
+
+Screenshot Output Hasil Per Soal
+NO.3 Soal
+Jawaban Query Soal No. 3
+-------------------
+
+DST
+-------------------
