@@ -76,5 +76,5 @@ on tds.joindate = ts.joindate ;
 --M. Tampilkan seluruh data antara 2 tabel baik itu tidak punya kesamaan dan bernilai null.
 SELECT * 
 FROM tbl_data_staff tds 
-inner join tbl_staffoutsource ts 
+full join tbl_staffoutsource ts 
 on tds.nik = ts.nik ;
