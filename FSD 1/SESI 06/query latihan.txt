@@ -1,0 +1,22 @@
+CREATE DATABASE db_sesi6;
+
+CREATE TABLE tbl_siswa(
+	id_siswa int identity(1,1) primary key ,
+	nis varchar(10),
+	nama varchar(50),
+	alamat varchar(100),
+	tgl_lahir date,
+	jenis_kelamin varchar(1)
+	
+);
+
+ALTER table tbl_siswa alter column jenis_kelamin varchar(10);
+
+SELECT ts.nis, ts.nama FROM tbl_siswa ts;
+
+INSERT INTO tbl_siswa(NIS,NAMA,ALAMAT,TGL_LAHIR,jenis_kelamin)VALUES('10','BEJO','SURABAYA','2010-10-06','PRIA');
+INSERT INTO tbl_siswa(NIS,NAMA,ALAMAT,TGL_LAHIR,jenis_kelamin)VALUES('02','ANI','MALANG','2010-10-06','WANITA');
+
+SELECT ts.nama, ts.tgl_lahir from tbl_siswa ts WHERE nis = '02';
+
+UPDATE TBL_SISWA SET NAMA = 'BEJO SUTEDJO' WHERE NIS = '10';

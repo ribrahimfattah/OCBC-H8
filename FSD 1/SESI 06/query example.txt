@@ -1,0 +1,80 @@
+--a.Buat Database baru dengan nama staff
+CREATE database db_staff;
+
+--b.Buat Table data_staff dengan desain spt dibawah ini :
+CREATE table tbl_data_staff(
+	id_staff int primary key identity(1,1),
+	nik int unique,
+	nama varchar(50),
+	alamat varchar(200),
+	handphone varchar(15)
+);
+
+--c.Masukkan data ke dalam table data_staff sesuai dengan table diatas
+--d.Masukkan lebih dari 1 data ke dalam table data masih dalam table diatas.
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('243', 'ibra', 'semarang', '088888548');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('777', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('765', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('877', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('543', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('544', 'ibra', 'semarang', '088878548');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('654', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('333', 'ibra', 'semarang', '088888998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('876', 'ibra', 'semarang', '088868998');
+INSERT into tbl_data_staff(nik, nama, alamat, handphone )values('353', 'ibra', 'semarang', '088888900');
+
+--e.Tambahkan kolom baru pada table data_staff yaitu joindate sekaligus masukan 1 data kedalam table data_staff
+ALTER table tbl_data_staff add joindate date;
+INSERT into tbl_data_staff(nik, nama, alamat, handphone, joindate )values('111', 'ibra', 'semarang', '088888900', '2020-10-13');
+
+--F. Tampilkan 2 data SQL kalian sekarang
+SELECT TOP 2 * from tbl_data_staff tds ;
+
+--G. Tampilkan 3 data SQL kalian sekarang
+SELECT TOP 3 * from tbl_data_staff tds ;
+
+--H. Buat Table baru staffoutsource dengan isi yang sama seperti data_staff
+CREATE table tbl_staffoutsource(
+	id_staff int primary key identity(1,1),
+	nik int unique,
+	nama varchar(50),
+	alamat varchar(200),
+	handphone varchar(15),
+	joindate date
+);
+
+--I.  Masukkan 10 data baru ke table staffoutsource
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('243', 'ibra', 'semarang', '088888548', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('777', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('765', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('877', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('543', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('544', 'ibra', 'semarang', '088878548', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('654', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('443', 'ibra', 'semarang', '088888998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('665', 'ibra', 'semarang', '088868998', '2020-10-13');
+INSERT into tbl_staffoutsource(nik, nama, alamat, handphone, joindate)values('789', 'ibra', 'semarang', '088888900', '2020-10-11');
+
+--J. Tampilkan data pada 2 Table yang sudah kalian buat dengan joindate yang sama
+SELECT * 
+FROM tbl_data_staff tds 
+full join tbl_staffoutsource ts 
+on tds.joindate = ts.joindate ;
+
+--K. Tampilkan seluruh data sebelah kanan yang sama pada table staff_outsource
+SELECT * 
+FROM tbl_data_staff tds 
+right join tbl_staffoutsource ts 
+on tds.joindate = ts.joindate ;
+
+--L. Tampilkan seluruh data staff sebelah kiri yang punya nilai tidak sama akan bernilai null
+SELECT * 
+FROM tbl_data_staff tds 
+left join tbl_staffoutsource ts 
+on tds.joindate = ts.joindate ;
+
+--M. Tampilkan seluruh data antara 2 tabel baik itu tidak punya kesamaan dan bernilai null.
+SELECT * 
+FROM tbl_data_staff tds 
+inner join tbl_staffoutsource ts 
+on tds.nik = ts.nik ;
