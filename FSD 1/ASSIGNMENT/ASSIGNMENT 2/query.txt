@@ -1,0 +1,147 @@
+CREATE database db_bank;
+
+create table tbl_productLines(
+	productLine varchar(50) primary key,
+	textDescription text,
+	htmlDescription text,
+	image varchar(255)
+);
+
+create table tbl_products(
+	productCode varchar(50) primary key,
+	productName varchar(50),
+	productLine varchar(50),
+	productScale int,
+	productVendor varchar(50),
+	productDescription text,
+	quantityInStock int,
+	buyPrice int,
+	MSRP int,
+);
+
+create table tbl_orderDetails(
+	orderLineNumber int identity(1,1) primary key,
+	orderNumber int unique,
+	productCode varchar(50),
+	quantityOrdered int,
+	priceEach int,
+);
+
+create table tbl_orders(
+	orderNumber  int identity(1,1) primary key,
+	orderDate datetime,
+	requireDate datetime,
+	shippedDate datetime,
+	status varchar(15),
+	comments varchar(100),
+	customerNumber int
+);
+
+create table tbl_customers(
+	customerNumber int identity(1,1) primary key,
+	customerName varchar(50),
+	contactFirstName varchar(50),
+	contactLastName varchar(50),
+	phone varchar(13) unique,
+	addressLine1 varchar(100),
+	addressLine2 varchar(100),
+	city varchar(50),
+	state varchar(50),
+	postalCode int,
+	salesRepEmployeeNumber int,
+	creditLimit int
+);
+
+create table tbl_payments(
+	checkNumber int identity(1,1) primary key,
+	customerNumber int,
+	paymentDate datetime,
+	amount int
+);
+
+create table tbl_employee(
+	employeeNumber int identity(1,1) primary key,
+	firstName varchar(50),
+	lastName varchar(50),
+	extension char check(extension in('Y','N')),
+	email varchar(50) unique,
+	officeCode int,
+	reportsTo int,
+	jobTitlte varchar(50)
+);
+
+create table tbl_offices(
+	officeCode int identity(1,1) primary key,
+	city varchar(50),
+	phone varchar(13) unique,
+	addressLine1 varchar(100),
+	addressLine2 varchar(100),
+	state varchar(50),
+	postalCode int,
+	territory varchar(50)
+);
+
+--1. Customers => stores data customer
+
+insert into tbl_customers(customerName, contactFirstName, contactLastName, phone, addressLine1, addressLine2, city, 
+state, postalCode, salesRepEmployeeNumber, creditLimit)values
+('Adi Putro', 'Adi', 'Putro', '086435978465', 'Jl. flamboyan', '', 'Semarang', 'Indonesia', '65485', '2', '10000000'),
+('Baim Paula', 'Baim', 'Paula', '089784684625', 'Jl. flores', '', 'Brebes', 'Indonesia', '65985', '2', '10000000'),
+('Ronaldo', 'Ronaldo', '', '086452194532', 'Jl. Merpati', '', 'Jakarta', 'Indonesia', '36521', '1', '25000000'),
+('Mawar Melati Indah', 'Mawar', 'Melati Indah', '085556425495', 'Jl. Supratman', 'RT 01/03', 'Semarang', 'Indonesia', '65874', '3', '10000000'),
+('Rafi Ahmad Dani', 'Rafi', 'Ahmad Dani', '08644135644', 'Jl. Katak', '', 'Surabaya', 'Indonesia', '33656', '2', '15000000'),
+('Lestari Ningrum', 'Lestari', 'Ningrum', '088895741652', 'Jl. Sukajaya', '', 'Medan', 'Indonesia', '65485', '1', '10000000'),
+('Nur Cahyono Putra', 'Nur', 'Cahyono Putra', '089999657416', 'Jl. Mangga', '', 'Brebes', 'Indonesia', '65985', '2', '10000000'),
+('Dimas Anggara', 'Dimas', 'Anggara', '086555964313', 'Jl. Merpati', '', 'Malang', 'Indonesia', '36521', '1', '25000000'),
+('Teguh', 'Teguh', '', '086455213649', 'Jl. Harjosari', 'RT 01/03', 'Semarang', 'Indonesia', '65874', '3', '10000000'),
+('Fadil Pradiansyah', 'Fadil', 'Pradiansyah', '087779467134', 'Jl. Merpati', '', 'Tegal', 'Indonesia', '33656', '3', '15000000');
+
+
+INSERT into tbl_products values
+('MBL002', 'Mobil', 'Transportasi', '300', 'Toyota', 'Produk mobil', '132', '300000000', '370000000'),
+('MBL003', 'Mobil', 'Transportasi', '300', 'Honda', 'Produk mobil', '267', '300000000', '260000000'),
+('MTR001', 'Motor', 'Transportasi', '100', 'Suzuki', 'Produk motor', '78', '10000000', '13000000'),
+('RMH001', 'Rumah', 'Properti', '10', '99dev', 'Rumah kapling', '9', '300000000', '500000000'),
+('RMH002', 'Rumah', 'Properti', '15', '99dev', 'Rumah elit', '25', '650000000', '1000000000');
+
+
+INSERT into tbl_productLines values
+('Transportasi', 'ini penjulan transportasi', '', 'gambarmbl2'),
+('Properti', 'ini penjulan properti', '', 'gmbrrumah');
+
+
+INSERT into tbl_orders(orderDate, requireDate, shippedDate, status, comments, customerNumber)values
+('2020-10-15 13:25:55', '2020-10-15 17:22:12', '2020-10-15 13:25:55', 'Confirm', '', '2'),
+('2020-10-15 13:11:43', '2020-10-15 17:00:55', '2020-10-15 13:27:55', 'Confirm', '', '5'),
+('2020-10-15 13:25:55', '2020-10-15 13:25:55', '2020-10-15 13:25:55', 'Packing', '', '4'),
+('2020-7-6 13:11:43', '2020-7-15 17:00:55', '2020-7-16 13:27:55', 'Confirm', 'warna hitam', '7'),
+('2020-9-22 13:25:55', '2020-9-15 13:25:55', '2020-9-16 13:25:55', 'Packing', '', '1');
+
+
+insert into tbl_orderDetails(orderNumber, productCode, quantityOrdered, priceEach)values
+('1', 'RMH001', '1', '500000000'),
+('2', 'RMH001', '1', '500000000'),
+('3', 'MBL001', '1', '450000000'),
+('4', 'MBL002', '1', '370000000'),
+('5', 'MTR001', '2', '250000000');
+
+INSERT into tbl_payments(customerNumber, paymentDate, amount)values
+('5', '2020-10-15 13:30:33', '25000000'),
+('2', '2020-10-15 13:25:55', '25000000'),
+('4', '2020-10-15 13:25:55', '25000000'),
+('1', '2020-9-22 13:25:55', '25000000'),
+('7', '2020-7-6 13:11:43', '25000000');
+
+INSERT INTO tbl_employee(firstName, lastName, extension, email, officeCode, reportsTo, jobTitlte)values
+('Indah', 'Sari', 'Y', 'indah@gmail.com', '3', '4', 'Staff'),
+('Bayu', 'Riyadi', 'N', 'bayu@gmail.com', '3', '4', 'Staff'),
+('Afis', 'Putra', 'Y', 'afis@gmail.com', '1', '5', 'Staff'),
+('Resa', 'Kumala', 'Y', 'resa@gmail.com', '2', '6', 'SPV'),
+('Fahmi', 'Afianto', 'Y', 'fahmi@gmail.com', '4', '6', 'SPV'),
+('Yunanda', 'Gilang', 'Y', 'gilang@gmail.com', '1', '5', 'Manager');
+
+INSERT into tbl_offices(city, phone, addressLine1, addressLine2, state, postalCode, territory)values
+('Semarang', '021666', 'Jl. Pemuda', '', 'Indonesia', '66452', 'Indonesia' ),
+('Semarang', '021645', 'Jl. Indraprasta', '', 'Indonesia', '65345', 'Indonesia' ),
+('Tegal', '024689', 'Jl. batu', '', 'Indonesia', '55124', 'Indonesia' ),
+('Pemalang', '056645', 'Jl. Damai', '', 'Indonesia', '11204', 'Indonesia' );

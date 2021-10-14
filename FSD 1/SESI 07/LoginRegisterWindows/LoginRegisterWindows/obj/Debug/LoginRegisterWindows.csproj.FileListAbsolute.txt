@@ -1,0 +1,16 @@
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.exe.config
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.exe
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.pdb
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\MySql.Data.DLL
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.AssemblyReference.cache
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Form1.resources
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Properties.Resources.resources
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Register.resources
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.GenerateResource.cache
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.CoreCompileInputs.cache
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.exe
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.pdb
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.dll
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.xml
+C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.Async.xml
