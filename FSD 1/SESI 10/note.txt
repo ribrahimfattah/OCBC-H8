@@ -1,0 +1,18 @@
+//untuk tool
+dotnet tool install --global dotnet-aspnet-codegenerator
+
+
+db -> app.db
+CREATE TABLE "Items" ( "Id" INTEGER NOT NULL CONSTRAINT "PK_Items" PRIMARY KEY AUTOINCREMENT, "Title" TEXT NULL, "Description" TEXT NULL, "Done" INTEGER NOT NULL )
+
+CREATE TABLE "__EFMigrationsHistory" ( "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY, "ProductVersion" TEXT NOT NULL )
+
+// migrations
+dotnet ef migrations remove   // hapus
+
+{
+    "id" : 5,
+    "Title" : "Marvel Avengers",
+    "Description" : "Tentang pahlawan super",
+    "done" : true
+}
