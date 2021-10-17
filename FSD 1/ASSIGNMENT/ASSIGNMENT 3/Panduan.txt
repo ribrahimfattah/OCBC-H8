@@ -4,6 +4,8 @@ Nama 		: Rasyid Ibrahim Fattah
 Kode Peserta 	: 030 (FSDO001ONL030)
 Alamat 		: Semarang
 
+Link : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/ASSIGNMENT/ASSIGNMENT%203
+
 1. ketik dotnet run
 2. GET  	https://localhost:5001/api/moviesapi		#untuk menampilkan semua data film
 3. GET  	https://localhost:5001/api/moviesapi/{id}	#untuk menampilkan data film sesuai id
