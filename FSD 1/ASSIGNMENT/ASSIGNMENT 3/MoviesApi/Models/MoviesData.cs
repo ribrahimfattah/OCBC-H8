@@ -7,7 +7,6 @@ namespace MoviesApi.Models {
         public string Genre { get; set; }
         public string Duration { get; set; }
         
-       // [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
     }
 }

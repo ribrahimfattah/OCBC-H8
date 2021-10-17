@@ -5,8 +5,6 @@ using MoviesApi.Models;
 using MySql.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-//using Microsoft.EntityFrameworkCore.SqlServer;
-//using Microsoft.EntityFrameworkCore.Tools;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 
@@ -20,15 +18,5 @@ namespace MoviesApi.Data
                 
             }
             
-        // public string ConnectionString { get; set; }
-        // public ApiDbContext(string connectionString)
-        // {
-        //     this.ConnectionString = connectionString;
-        // }
-
-        // private MySqlConnection GetConnection()
-        // {
-        //     return new MySqlConnection(ConnectionString);
-        // }
     }  
 }
