@@ -1,0 +1,19 @@
+============ ASSIGNMENT 3 =============
+
+Nama 		: Rasyid Ibrahim Fattah
+Kode Peserta 	: 030 (FSDO001ONL030)
+Alamat 		: Semarang
+
+1. ketik dotnet run
+2. GET  	https://localhost:5001/api/moviesapi		#untuk menampilkan semua data film
+3. GET  	https://localhost:5001/api/moviesapi/{id}	#untuk menampilkan data film sesuai id
+4. POST 	https://localhost:5001/api/moviesapi		#untuk menambahkan data film
+5. PUT		https://localhost:5001/api/moviesapi/{id} 	#untuk update data film sesuai id
+6. DELETE	https://localhost:5001/api/moviesapi/{id}	#untuk hapus data film sesuai id
+
+{
+    "Name": "Vincenzo",
+    "Genre": "Drama Korea, Kriminal, Komedi",
+    "Duration": "1 Season @eps 50m",
+    "ReleaseDate": "2021-04-20"
+}
