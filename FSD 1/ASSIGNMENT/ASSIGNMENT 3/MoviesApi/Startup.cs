@@ -50,7 +50,7 @@ namespace MoviesApi
                 dbContextOptions => dbContextOptions
                     .UseMySql(connectionString, serverVersion)
             );
-             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+            services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoviesApi", Version = "v1" });

@@ -52,28 +52,28 @@ namespace MoviesApi.Controllers {
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMovie(int id) {
-            var mov = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
+            var movie = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(mov == null)
+            if(movie == null)
                 return NotFound();
 
-            return Ok(mov);
+            return Ok(movie);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateMovie(int id, MoviesData mov) {
-            if(id != mov.Id)
+        public async Task<IActionResult> UpdateMovie(int id, MoviesData movie) {
+            if(id != movie.Id)
                 return BadRequest();
             
-            var existMov = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
+            var existMovie = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(existMov == null)
+            if(existMovie == null)
                 return NotFound();
 
-            existMov.Name = mov.Name;
-            existMov.Genre = mov.Genre;
-            existMov.Duration = mov.Duration;
-            existMov.ReleaseDate = mov.ReleaseDate;
+            existMovie.Name = movie.Name;
+            existMovie.Genre = movie.Genre;
+            existMovie.Duration = movie.Duration;
+            existMovie.ReleaseDate = movie.ReleaseDate;
 
             await _context.SaveChangesAsync();
 
@@ -82,15 +82,15 @@ namespace MoviesApi.Controllers {
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMovie(int id) {
-            var existMov = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
+            var existMovie = await _context.Movie.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(existMov == null)
+            if(existMovie == null)
                 return NotFound();
 
-            _context.Movie.Remove(existMov);
+            _context.Movie.Remove(existMovie);
             await _context.SaveChangesAsync();
 
-            return Ok(existMov);
+            return Ok(existMovie);
         }
     }
 }
