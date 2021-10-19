@@ -82,3 +82,4 @@ F:\WORK\HACKTIV8\FSD 1\SESI 12\UnitTest_Mock\UnitTest_Mock\obj\Debug\net5.0\Unit
 F:\WORK\HACKTIV8\FSD 1\SESI 12\UnitTest_Mock\UnitTest_Mock\obj\Debug\net5.0\ref\UnitTest_Mock.dll
 F:\WORK\HACKTIV8\FSD 1\SESI 12\UnitTest_Mock\UnitTest_Mock\obj\Debug\net5.0\UnitTest_Mock.pdb
 F:\WORK\HACKTIV8\FSD 1\SESI 12\UnitTest_Mock\UnitTest_Mock\obj\Debug\net5.0\UnitTest_Mock.genruntimeconfig.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 12\UnitTest_Mock\UnitTest_Mock\obj\Debug\net5.0\UnitTest_Mock.csproj.AssemblyReference.cache
