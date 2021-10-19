@@ -1,0 +1,69 @@
+windows + r ketikan appwiz.cpl
+pilih turn window feature on or off
+windows subsystem for linux - on
+windows hypervisor platform - on
+download Heroku cli
+download docker desktop
+cek heroku --version
+cek docker --version
+
+install wsl 2:
+https://docs.microsoft.com/en-gb/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+
+cek wsl --status
+login heroku
+click new app
+masukan app name "demo-corewebapi"
+stelah itu klik tombol create app
+
+1. Heroku Git
+git add
+git commit
+git push heroku master/main
+
+2. Github.com
+git add
+git commit
+git push origin master/main
+**kalau push kedalam branch master akan melakukan deploy manual menuju heroku
+**kalau push ke main akan otomatis deploy menuju heroku
+
+push github origin main akan langsung deploy
+++ lebih cepat
+-- akan makan resource dan error akan muncul di heroku
+
+push github origin master tidak langsung deploy
+++ lebih aman untuk checking error dan testing
+
+3. Container docker
+nameapp: demo-corewebapi
+registry.heroku.com/demo-corewebapi/web
+
+ketik:
+heroku login
+heroku container:login
+//heroku git:remote -a demo-corewebapi
+heroku container:push web -a demo-corewebapi **Belum dipakai
+
+dotnet publish -c Release
+docker build -t corewebapi:dev .
+
+docker run -d -p 5000:80 --name myapp corewebapi:dev
+docker tag corewebapi:dev registry.heroku.com/demo-corewebapi-030/web
+
+heroku container:push web -a demo-corewebapi-030
+heroku container:release web -a demo-corewebapi-030
+
+EXPOSE 48719
+EXPOSE 27017
+EXPOSE 5000
+EXPOSE 5001
+
+Linux + Mac: https://github.com/nvm-sh/nvm
+Windows: https://github.com/coreybutler/nvm-windows
+
+
+Mic standar aja kok: Samson Q4
+tapi mahal di mixer-nya xD
+
+mixer-nya pakai Behringer mas, model Xenyx USB punya

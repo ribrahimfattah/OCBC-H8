@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 
 namespace UnitTest_Mock.Models
 {
-    public class ApiDbContext
+    public class ApiDbContext : DbContext
     {
         public virtual DbSet<Employee> Employees { get; set; }
 
