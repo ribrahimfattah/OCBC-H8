@@ -3,7 +3,9 @@
 ============ FINAL PROJECT ================
 
 Nama : Rasyid Ibrahim Fattah
-Kode Peserta : 030 ()
+Kode Peserta : 030 (FSDO001ONL030)
+
+Link Github : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/FINAL%20PROJECT/030_RasyidIbrahimFattah_FinalProject
 
 1. jalankan aplikasi dengan ketik dotnet run
 2. buka postman dan masukkan url berikut :
@@ -39,7 +41,7 @@ Kode Peserta : 030 ()
  
  -> getById                https://localhost:5001/finalproject/paymentdetails/{id}
  
- ->getUserByRange          https://localhost:5001/finalproject/paymentdetails/getusers/{id}/{id}
+ -> getUserByRange         https://localhost:5001/finalproject/paymentdetails/getusers/{id}/{id}
  
  
  Note : - Docker sudah bisa di upload dengan mysql dan phpmyadmin juga sudah terhubung tetapi belum konek ke aplikasi
