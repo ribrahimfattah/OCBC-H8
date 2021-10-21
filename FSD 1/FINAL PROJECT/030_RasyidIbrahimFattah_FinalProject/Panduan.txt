@@ -1,0 +1,49 @@
+
+
+============ FINAL PROJECT ================
+
+Nama : Rasyid Ibrahim Fattah
+Kode Peserta : 030 ()
+
+1. jalankan aplikasi dengan ketik dotnet run
+2. buka postman dan masukkan url berikut :
+-> register/post        https://localhost:5001/finalproject/Authmanagement/register
+      {
+        "username": "final",
+        "email": "final@email.com",
+        "password": "Final.123"
+      }
+      
+-> login/post         https://localhost:5001/finalproject/authmanagement/login
+      {
+        "email": "final@email.com",
+        "password": "Final.123"
+      }
+      
+-> tambah data/post     https://localhost:5001/finalproject/paymentdetails
+      {
+          "paymentDataId": "1",
+          "cardOwnerName": "Test",
+          "cardNumber": "8845679765",
+          "expirationDate": "2021-10-21T10:53:43.778",
+          "securityCode": "555425"
+      }
+ 
+ -> refresh token/post     https://localhost:5001/finalproject/Authmanagement/refreshtoken
+ 
+ -> update data/put        https://localhost:5001/finalproject/paymentdetails/{id}
+ 
+ -> delete                 https://localhost:5001/finalproject/paymentdetails/{id}
+ 
+ -> getAll                 https://localhost:5001/finalproject/paymentdetails/
+ 
+ -> getById                https://localhost:5001/finalproject/paymentdetails/{id}
+ 
+ ->getUserByRange          https://localhost:5001/finalproject/paymentdetails/getusers/{id}/{id}
+ 
+ 
+ Note : - Docker sudah bisa di upload dengan mysql dan phpmyadmin juga sudah terhubung tetapi belum konek ke aplikasi
+        - di heroku masih tahap deploy
+        
+        
+        ================ TERIMA KASIH =================

@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "4da286d9-c840-45af-ba20-fd63d3ed294f",
+		"name": "Paymenet-030",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zwffyrpnpekqgzdcogkssroywezuvwzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n  \"username\": \"final\",\r\n  \"email\": \"final@email.com\",\r\n  \"password\": \"Final.123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/Authmanagement/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"Authmanagement",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n  \"email\": \"final@email.com\",\r\n  \"password\": \"Final.123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/authmanagement/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"authmanagement",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentDataId\": \"7\",\r\n    \"cardOwnerName\": \"Fela\",\r\n    \"cardNumber\": \"8845679765\",\r\n    \"expirationDate\": \"2021-10-21T10:53:43.778\",\r\n    \"securityCode\": \"555425\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserByRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/finalproject/paymentdetails/getusers/2/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"paymentdetails",
+						"getusers",
+						"2",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refreshToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImVmYzVmOTJjLTcyZTQtNDYyYy05ZTdjLTg2NmI1MjdhZDliMCIsImVtYWlsIjoiZmluYWxAZW1haWwuY29tIiwic3ViIjoiZmluYWxAZW1haWwuY29tIiwianRpIjoiNjViM2JlNGQtNDBiYi00YjA4LWI2MDctMzBkNWRmZDIyODYyIiwibmJmIjoxNjM0ODQwOTczLCJleHAiOjE2MzQ4NDQ1NzMsImlhdCI6MTYzNDg0MDk3M30.5HIiOB0wZgzOOt8AMkxZSJBZdW_MvfJTq8pzpmyq7BE\",\r\n    \"refreshToken\": \"0NYQE74N1RVTRUKONED8VS1P00ZNQT60ZJVd68bc7f5-889e-463a-a0db-91abd554ee7f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/finalproject/Authmanagement/refreshtoken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"finalproject",
+						"Authmanagement",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

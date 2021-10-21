@@ -36,7 +36,7 @@ namespace LoginRegisterWindows
 
             if(db.Count() == 1)
             {
-                MessageBox.Show("Success you will login as" + db.Results(0, "nama"));
+                MessageBox.Show("Success you will login as " + db.Results(0, "nama"));
             }
             else
             {

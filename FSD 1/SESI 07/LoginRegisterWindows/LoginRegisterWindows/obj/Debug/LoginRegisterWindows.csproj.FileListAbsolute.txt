@@ -14,3 +14,19 @@ C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\
 C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.dll
 C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.xml
 C:\Users\ribra\source\repos\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.Async.xml
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.AssemblyReference.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Form1.resources
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Register.resources
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.GenerateResource.cache
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.exe
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.pdb
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.exe.config
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.exe
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\LoginRegisterWindows.pdb
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\MySql.Data.DLL
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.Async.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.dll
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.xml
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\bin\Debug\Renci.SshNet.Async.xml
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.Properties.Resources.resources
+F:\WORK\HACKTIV8\FSD 1\SESI 07\LoginRegisterWindows\LoginRegisterWindows\obj\Debug\LoginRegisterWindows.csproj.CoreCompileInputs.cache
