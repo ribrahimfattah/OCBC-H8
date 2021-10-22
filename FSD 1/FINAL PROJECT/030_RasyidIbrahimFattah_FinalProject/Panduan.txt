@@ -6,22 +6,42 @@ Nama : Rasyid Ibrahim Fattah
 Kode Peserta : 030 (FSDO001ONL030)
 
 Link Github : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/FINAL%20PROJECT/030_RasyidIbrahimFattah_FinalProject
+Link Heroku : https://payment-030.herokuapp.com/finalproject/paymentdetails
+---------
+database:
+local : MySql
+Heroku : Postgre
+----------------------
+DB name : db_final_project
+migration -> dotnet ef database update
+----------------------------------------------------
 
 1. jalankan aplikasi dengan ketik dotnet run
-2. buka postman dan masukkan url berikut :
+2. buka postman/swagger dan masukkan url berikut :
+
+#user harus melakukan registrasi terlebih dahulu sebelum melakukan akses ke aplikasi. karena aplikais in menggunakan JWT Authentication
 -> register/post        https://localhost:5001/finalproject/Authmanagement/register
       {
         "username": "final",
         "email": "final@email.com",
-        "password": "Final.123"
+        "password": "Final.123" 
       }
       
+    // password harus ada hurur kecil [a-z]
+    // password harus ada huruf kapital [A-Z]
+    // password harus ada angka [0-9]
+    // password harus ada simbol
+    // password minimal 6 karakter
+    
+#setelah berhasil melakukan registrasi, user dapat melakukan login dengan email dan password saat registrasi    
 -> login/post         https://localhost:5001/finalproject/authmanagement/login
       {
         "email": "final@email.com",
         "password": "Final.123"
       }
-      
+
+#setiap 1 jam sekali token akan merefresh ulang sehingga user diminta login kembali
+
 -> tambah data/post     https://localhost:5001/finalproject/paymentdetails
       {
           "paymentDataId": "1",
@@ -31,21 +51,27 @@ Link Github : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/FINAL%
           "securityCode": "555425"
       }
  
- -> refresh token/post     https://localhost:5001/finalproject/Authmanagement/refreshtoken
  
- -> update data/put        https://localhost:5001/finalproject/paymentdetails/{id}
+                                              LOCAL                                                                                                       HEROKU
+                                              
+ -> refresh token/post     https://localhost:5001/finalproject/Authmanagement/refreshtoken                                    https://payment-030.herokuapp.com/finalproject/Authmanagement/refreshtoken 
  
- -> delete                 https://localhost:5001/finalproject/paymentdetails/{id}
+ -> update data/put        https://localhost:5001/finalproject/paymentdetails/{id}                                            https://payment-030.herokuapp.com/finalproject/paymentdetails/{id} 
  
- -> getAll                 https://localhost:5001/finalproject/paymentdetails/
+ -> delete                 https://localhost:5001/finalproject/paymentdetails/{id}                                            https://payment-030.herokuapp.com/finalproject/paymentdetails/{id} 
  
- -> getById                https://localhost:5001/finalproject/paymentdetails/{id}
+ -> getAll                 https://localhost:5001/finalproject/paymentdetails/                                                https://payment-030.herokuapp.com/finalproject/paymentdetails
  
- -> getUserByRange         https://localhost:5001/finalproject/paymentdetails/getusers/{id}/{id}
+ -> getById                https://localhost:5001/finalproject/paymentdetails/{id}                                            https://payment-030.herokuapp.com/finalproject/paymentdetails/{id}
  
+ -> getUserByRange         https://localhost:5001/finalproject/paymentdetails/getusers/{id}/{id}                              https://payment-030.herokuapp.com/finalproject/paymentdetails/getusers/{id}/{id} 
+
+#getUserByRange digunakan untuk mencari range user berdasarkan id.
+  => contoh : mencari id dari range 2 sampai 5 maka URL nya seperti ini
+  => https://localhost:5001/finalproject/paymentdetails/getusers/2/5                            https://payment-030.herokuapp.com/finalproject/paymentdetails/getusers/2/5  
+  
+   maka akan menampilkan user dari id 2 sampai 5
  
- Note : - Docker sudah bisa di upload dengan mysql dan phpmyadmin juga sudah terhubung tetapi belum konek ke aplikasi
-        - di heroku masih tahap deploy
         
         
-        ================ TERIMA KASIH =================
+                                          ================ TERIMA KASIH =================

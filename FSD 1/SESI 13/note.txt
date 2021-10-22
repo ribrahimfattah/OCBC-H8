@@ -46,13 +46,13 @@ heroku container:login
 heroku container:push web -a demo-corewebapi **Belum dipakai
 
 dotnet publish -c Release
-docker build -t corewebapi:dev .
+docker build -t paymentdetails:dev .
 
-docker run -d -p 5000:80 --name myapp corewebapi:dev
-docker tag corewebapi:dev registry.heroku.com/demo-corewebapi-030/web
+docker run -d -p 5000:80 --name payment paymentdetails:dev
+docker tag paymentdetails:dev registry.heroku.com/payment-030/web
 
-heroku container:push web -a demo-corewebapi-030
-heroku container:release web -a demo-corewebapi-030
+heroku container:push web -a payment-030
+heroku container:release web -a payment-030
 
 EXPOSE 48719
 EXPOSE 27017
