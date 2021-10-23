@@ -140,8 +140,11 @@ namespace LoginRegisterWindows
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblNama);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Register";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 

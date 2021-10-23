@@ -31,13 +31,13 @@ namespace LoginRegisterWindows
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtNamaLog = new System.Windows.Forms.TextBox();
+            this.txtNamaLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDataName = new System.Windows.Forms.TextBox();
+            this.txtNama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDataAlamat = new System.Windows.Forms.TextBox();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDataNo = new System.Windows.Forms.TextBox();
+            this.txtNoHp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCari = new System.Windows.Forms.Button();
             this.btnBatal = new System.Windows.Forms.Button();
@@ -46,6 +46,9 @@ namespace LoginRegisterWindows
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnIsCari = new System.Windows.Forms.Button();
+            this.lblCari = new System.Windows.Forms.Label();
+            this.lblIsCari = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,13 +69,13 @@ namespace LoginRegisterWindows
             this.txtUsername.Size = new System.Drawing.Size(150, 20);
             this.txtUsername.TabIndex = 1;
             // 
-            // txtNamaLog
+            // txtNamaLogin
             // 
-            this.txtNamaLog.Location = new System.Drawing.Point(356, 24);
-            this.txtNamaLog.Name = "txtNamaLog";
-            this.txtNamaLog.ReadOnly = true;
-            this.txtNamaLog.Size = new System.Drawing.Size(150, 20);
-            this.txtNamaLog.TabIndex = 3;
+            this.txtNamaLogin.Location = new System.Drawing.Point(356, 24);
+            this.txtNamaLogin.Name = "txtNamaLogin";
+            this.txtNamaLogin.ReadOnly = true;
+            this.txtNamaLogin.Size = new System.Drawing.Size(150, 20);
+            this.txtNamaLogin.TabIndex = 3;
             // 
             // label2
             // 
@@ -83,12 +86,12 @@ namespace LoginRegisterWindows
             this.label2.TabIndex = 2;
             this.label2.Text = "Nama Login";
             // 
-            // txtDataName
+            // txtNama
             // 
-            this.txtDataName.Location = new System.Drawing.Point(96, 77);
-            this.txtDataName.Name = "txtDataName";
-            this.txtDataName.Size = new System.Drawing.Size(150, 20);
-            this.txtDataName.TabIndex = 5;
+            this.txtNama.Location = new System.Drawing.Point(96, 77);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.Size = new System.Drawing.Size(150, 20);
+            this.txtNama.TabIndex = 5;
             // 
             // label3
             // 
@@ -99,12 +102,12 @@ namespace LoginRegisterWindows
             this.label3.TabIndex = 4;
             this.label3.Text = "Name";
             // 
-            // txtDataAlamat
+            // txtAlamat
             // 
-            this.txtDataAlamat.Location = new System.Drawing.Point(96, 103);
-            this.txtDataAlamat.Name = "txtDataAlamat";
-            this.txtDataAlamat.Size = new System.Drawing.Size(150, 20);
-            this.txtDataAlamat.TabIndex = 7;
+            this.txtAlamat.Location = new System.Drawing.Point(96, 103);
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(150, 20);
+            this.txtAlamat.TabIndex = 7;
             // 
             // label4
             // 
@@ -115,21 +118,21 @@ namespace LoginRegisterWindows
             this.label4.TabIndex = 6;
             this.label4.Text = "Alamat";
             // 
-            // txtDataNo
+            // txtNoHp
             // 
-            this.txtDataNo.Location = new System.Drawing.Point(96, 129);
-            this.txtDataNo.Name = "txtDataNo";
-            this.txtDataNo.Size = new System.Drawing.Size(150, 20);
-            this.txtDataNo.TabIndex = 9;
+            this.txtNoHp.Location = new System.Drawing.Point(96, 129);
+            this.txtNoHp.Name = "txtNoHp";
+            this.txtNoHp.Size = new System.Drawing.Size(150, 20);
+            this.txtNoHp.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(35, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "No. Telp";
+            this.label5.Text = "No. HP";
             // 
             // btnCari
             // 
@@ -139,6 +142,7 @@ namespace LoginRegisterWindows
             this.btnCari.TabIndex = 10;
             this.btnCari.Text = "Cari";
             this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // btnBatal
             // 
@@ -172,7 +176,7 @@ namespace LoginRegisterWindows
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(260, 175);
+            this.btnHapus.Location = new System.Drawing.Point(340, 175);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(75, 23);
             this.btnHapus.TabIndex = 14;
@@ -182,7 +186,7 @@ namespace LoginRegisterWindows
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(342, 173);
+            this.btnEdit.Location = new System.Drawing.Point(259, 175);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 15;
@@ -203,11 +207,45 @@ namespace LoginRegisterWindows
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
+            // btnIsCari
+            // 
+            this.btnIsCari.BackColor = System.Drawing.Color.Lime;
+            this.btnIsCari.Location = new System.Drawing.Point(298, 76);
+            this.btnIsCari.Name = "btnIsCari";
+            this.btnIsCari.Size = new System.Drawing.Size(75, 23);
+            this.btnIsCari.TabIndex = 17;
+            this.btnIsCari.Text = "Cari";
+            this.btnIsCari.UseVisualStyleBackColor = false;
+            this.btnIsCari.Click += new System.EventHandler(this.btnIsCari_Click);
+            // 
+            // lblCari
+            // 
+            this.lblCari.AutoSize = true;
+            this.lblCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblCari.Location = new System.Drawing.Point(374, 76);
+            this.lblCari.Name = "lblCari";
+            this.lblCari.Size = new System.Drawing.Size(193, 26);
+            this.lblCari.TabIndex = 18;
+            this.lblCari.Text = "Jika diklik anda akan dalam mode cari, \r\nform input akan direset";
+            this.lblCari.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lblIsCari
+            // 
+            this.lblIsCari.AutoSize = true;
+            this.lblIsCari.Location = new System.Drawing.Point(379, 81);
+            this.lblIsCari.Name = "lblIsCari";
+            this.lblIsCari.Size = new System.Drawing.Size(83, 13);
+            this.lblIsCari.TabIndex = 19;
+            this.lblIsCari.Text = "Mode cari is ON";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 369);
+            this.Controls.Add(this.lblIsCari);
+            this.Controls.Add(this.lblCari);
+            this.Controls.Add(this.btnIsCari);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHapus);
@@ -215,18 +253,19 @@ namespace LoginRegisterWindows
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnCari);
-            this.Controls.Add(this.txtDataNo);
+            this.Controls.Add(this.txtNoHp);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtDataAlamat);
+            this.Controls.Add(this.txtAlamat);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDataName);
+            this.Controls.Add(this.txtNama);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNamaLog);
+            this.Controls.Add(this.txtNamaLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "Dashboard";
-            this.Text = "Data";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Data_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -238,13 +277,13 @@ namespace LoginRegisterWindows
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtNamaLog;
+        private System.Windows.Forms.TextBox txtNamaLogin;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDataName;
+        private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDataAlamat;
+        private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDataNo;
+        private System.Windows.Forms.TextBox txtNoHp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCari;
         private System.Windows.Forms.Button btnBatal;
@@ -253,5 +292,8 @@ namespace LoginRegisterWindows
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnIsCari;
+        private System.Windows.Forms.Label lblCari;
+        private System.Windows.Forms.Label lblIsCari;
     }
 }

@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 namespace LoginRegisterWindows
 {
     public partial class Dashboard : Form
     {
         Config db = new Config();
-        public static int SetId;
+        public static int id;
+        bool isCari = false;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -22,7 +26,7 @@ namespace LoginRegisterWindows
         private void Data_Load(object sender, EventArgs e)
         {
             txtUsername.Text = Form1.SetValueUsername;
-            txtNamaLog.Text = Form1.SetValueNameLogin;
+            txtNamaLogin.Text = Form1.SetValueNamaLogin;
 
             initializeForm();
 
@@ -30,42 +34,37 @@ namespace LoginRegisterWindows
 
         private void initializeForm()
         {
-            txtDataName.Text = "";
-            txtDataAlamat.Text = "";
-            txtDataNo.Text = "";
+            txtNama.Text = "";
+            txtAlamat.Text = "";
+            txtNoHp.Text = "";
 
             txtUsername.ReadOnly = true;
-            txtNamaLog.ReadOnly = true;
+            txtNamaLogin.ReadOnly = true;
             dataGridView1.ReadOnly = true;
 
-            txtDataName.ReadOnly = true;
-            txtDataAlamat.ReadOnly = true;
-            txtDataNo.ReadOnly = true;
+            txtNama.ReadOnly = true;
+            txtAlamat.ReadOnly = true;
+            txtNoHp.ReadOnly = true;
 
             btnBatal.Enabled = false;
             btnSimpan.Enabled = false;
             btnHapus.Enabled = false;
             btnEdit.Enabled = false;
 
-            dataGridView1.DataSource = GetDataList();
+            btnIsCari.Hide();
+            lblCari.Show();
+            lblIsCari.Hide();
+
+            LoadDataGrid("*");
         }
 
         private void inputForm()
         {
-            txtDataName.ReadOnly = false;
-            txtDataAlamat.ReadOnly = false;
-            txtDataNo.ReadOnly = false;
+            txtNama.ReadOnly = false;
+            txtAlamat.ReadOnly = false;
+            txtNoHp.ReadOnly = false;
 
 
-        }
-
-        private DataTable GetDataList()
-        {
-            DataTable dtData = new DataTable();
-
-            dtData.Load(db.getDatagrid());
-
-            return dtData;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,33 +72,104 @@ namespace LoginRegisterWindows
 
         }
 
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (isCari)
+            {
+                MessageBox.Show("Anda sedang dalam mode cari!");
+            }
+            else
+            {
+                inputForm();
+
+                btnEdit.Enabled = true;
+                btnHapus.Enabled = true;
+                btnBatal.Enabled = true;
+
+                txtNama.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtAlamat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtNoHp.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            }
+            
+        }
+
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            isCari = true;
+
+            txtNama.Text = "";
+            txtAlamat.Text = "";
+            txtNoHp.Text = "";
+
+            txtAlamat.ReadOnly = true;
+            txtNoHp.ReadOnly = true;
+            txtNama.ReadOnly = false;
+
+            lblCari.Hide();
+            lblIsCari.Show();
+            btnBatal.Enabled = true;
+            btnIsCari.Show();
+        }
+
+        private void btnIsCari_Click(object sender, EventArgs e)
+        {
+            if(txtNama.Text == "")
+            {
+                MessageBox.Show("Siapa yang akan dicari? Nama belum diisi");
+            }
+            else
+            {
+                isCari = false;
+                btnIsCari.Hide(); 
+                lblCari.Show();
+                lblIsCari.Hide();
+                LoadDataGridSelect(txtNama.Text);
+            }
+        
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            isCari = false;
+            initializeForm();
+        }
+
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            inputForm();
+            if (isCari)
+            {
+                MessageBox.Show("Anda sedang dalam mode cari!");
+            }
+            else
+            {
+                inputForm();
 
-            btnBatal.Enabled = true;
-            btnSimpan.Enabled = true;
+                btnBatal.Enabled = true;
+                btnSimpan.Enabled = true;
+            }
+
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            if (txtDataName.Text == "")
+            if (txtNama.Text == "")
             {
                 MessageBox.Show("Nama Tidak boleh kosong!");
             }
-            else if (txtDataAlamat.Text == "")
+            else if (txtAlamat.Text == "")
             {
                 MessageBox.Show("Alamat Tidak boleh kosong!");
             }
-            else if (txtDataNo.Text == "")
+            else if (txtNoHp.Text == "")
             {
                 MessageBox.Show("No Hp Tidak boleh kosong!");
             }
             else
             {
-                db.Execute($"INSERT INTO `tbl_customers` (`nama`,`no_hp`,`alamat`) VALUES ('{txtDataName.Text}', '{txtDataNo.Text}', '{txtDataAlamat.Text}')");
+                db.Execute($"INSERT INTO `tbl_customers` (`nama`,`no_hp`,`alamat`) VALUES ('{txtNama.Text}', '{txtNoHp.Text}', '{txtAlamat.Text}')");
 
-                MessageBox.Show("Berhasil!");
+                MessageBox.Show("Data baru ditambahkan!");
 
                 initializeForm();
 
@@ -107,42 +177,23 @@ namespace LoginRegisterWindows
 
         }
 
-        private void btnBatal_Click(object sender, EventArgs e)
-        {
-            initializeForm();
-        }
-
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            inputForm();
-
-            btnEdit.Enabled = true;
-            btnHapus.Enabled = true;
-            btnBatal.Enabled = true;
-
-            txtDataName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtDataAlamat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtDataNo.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            SetId = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtDataName.Text == "")
+            if (txtNama.Text == "")
             {
                 MessageBox.Show("Nama tidak boleh kosong!");
             }
-            else if (txtDataAlamat.Text == "")
+            else if (txtAlamat.Text == "")
             {
                 MessageBox.Show("Alamat Tidak boleh kosong!");
             }
-            else if (txtDataNo.Text == "")
+            else if (txtNoHp.Text == "")
             {
                 MessageBox.Show("No HP tidak boleh Kosong!");
             }
             else
             {
-                db.Execute($"UPDATE `tbl_customers` SET nama= '{txtDataName.Text}',no_hp='{txtDataNo.Text}', alamat= '{txtDataAlamat.Text}' WHERE id='{SetId}'");
+                db.Execute($"UPDATE `tbl_customers` SET nama= '{txtNama.Text}',no_hp='{txtNoHp.Text}', alamat= '{txtAlamat.Text}' WHERE id='{id}'");
 
                 MessageBox.Show("Data berhasil diupdate!");
 
@@ -153,11 +204,33 @@ namespace LoginRegisterWindows
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            db.Execute($"DELETE FROM `tbl_customers` WHERE id='{SetId}'");
+            db.Execute($"DELETE FROM `tbl_customers` WHERE id='{id}'");
 
             MessageBox.Show("Data berhasil dihapus!");
 
             initializeForm();
+        }
+
+
+        private void LoadDataGrid(string query)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT {query} FROM tbl_customers", "server = localhost; database = db_userdata; UID = root; password = root");
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tbl_customers");
+            dataGridView1.DataSource = ds.Tables["tbl_customers"];
+        }
+
+        private void LoadDataGridSelect(string query)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM tbl_customers WHERE nama = '{query}'", "server = localhost; database = db_userdata; UID = root; password = root");
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tbl_customers");
+            dataGridView1.DataSource = ds.Tables["tbl_customers"];
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

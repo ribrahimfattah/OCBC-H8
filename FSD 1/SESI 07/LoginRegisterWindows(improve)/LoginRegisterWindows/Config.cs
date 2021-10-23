@@ -128,29 +128,10 @@ namespace LoginRegisterWindows
             }
         }
 
-        public MySqlDataReader getDatagrid()
-        {
-            Connect("db_userdata");
-
-            using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM tbl_customers", connection))
-            {
-                connection.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                try
-                {
-                    return reader;
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message);
-                    return reader;
-                }
-            }
-        }
-
         public int Count()
         {
             return dt.Rows.Count;
         }
+
     }
 }

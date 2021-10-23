@@ -15,7 +15,7 @@ namespace LoginRegisterWindows
         Config db = new Config();
 
         public static string SetValueUsername = "";
-        public static string SetValueNameLogin = "";
+        public static string SetValueNamaLogin = "";
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace LoginRegisterWindows
             {
                 MessageBox.Show("Success you will login as " + db.Results(0, "nama"));
                 SetValueUsername = db.Results(0, "username");
-                SetValueNameLogin = db.Results(0, "nama");
+                SetValueNamaLogin = db.Results(0, "nama");
                 Dashboard data = new Dashboard();
                 data.Show();
             }
