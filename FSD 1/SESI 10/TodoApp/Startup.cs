@@ -64,7 +64,30 @@ namespace TodoApp
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoApp", Version = "v1" });
+                var jwtSecurityScheme = new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description =
+                        "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter your token in the text input below.\r\n\r\nExample: \"12345abcdef\"",
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = JwtBearerDefaults.AuthenticationScheme
+                    }
+                };
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoApi", Version = "v1" });
+                c.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        jwtSecurityScheme, Array.Empty<string>()
+                    }
+                });
+
             });
         }
 

@@ -26,8 +26,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MoviesApi.Controllers {
+    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class MoviesApiController : ControllerBase {
         private readonly ApiDbContext _context;
         public MoviesApiController(ApiDbContext context) {
@@ -45,7 +48,13 @@ namespace MoviesApi.Controllers {
                 await _context.Movie.AddAsync(data);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction("GetMovie", new {data.Id}, data);
+                // return CreatedAtAction("GetMovie", new {data.Id}, data);
+
+                var movie = await _context.Movie.FirstOrDefaultAsync(x => x.Id == data.Id);
+                object[] result = new object[2];
+                result[0] = "Berhasil tambah data!";
+                result[1] = movie;
+                return Ok(result);
             }
             return new JsonResult("Something went wrong") {StatusCode = 500};
         }
@@ -77,7 +86,10 @@ namespace MoviesApi.Controllers {
 
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            object[] result = new object[2];
+            result[0] = "Berhasil update data!";
+            result[1] = existMovie;
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
@@ -90,7 +102,7 @@ namespace MoviesApi.Controllers {
             _context.Movie.Remove(existMovie);
             await _context.SaveChangesAsync();
 
-            return Ok(existMovie);
+            return new JsonResult("Movie dengan id " + id + " berhasil dihapus!") { StatusCode = 200 };
         }
     }
 }
