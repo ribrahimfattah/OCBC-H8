@@ -1,0 +1,5 @@
+<div class="container">
+    <!-- <button class="klik-tengah" (click)="onBtnClick()" *ngIf = "!isDisable"> {{ name }} </button> -->
+    <button class="klik-tengah" (click)="onBtnClick()" [disabled]="isDisabled"> {{ name }} </button>
+    <button class="klik-bawah" (click)="onBtnReset()"> {{ name2 }} </button>
+</div>
