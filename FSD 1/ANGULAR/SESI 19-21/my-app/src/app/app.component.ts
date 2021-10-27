@@ -12,6 +12,7 @@ export class AppComponent {
   counter = 0;
   message = '';
   isDisabled = false;
+  class = '';
 
   addCounter() {
 
@@ -40,4 +41,17 @@ export class AppComponent {
     if (this.counter == 0)
       this.message = '';
   }
+
+  people: any[] = [
+    {
+      "name": "ibra",
+      "age": 17,
+      "country": "USA"
+    },
+    {
+      "name": "Rasyid",
+      "age": 17,
+      "country": "HK"
+    },
+  ]
 }
