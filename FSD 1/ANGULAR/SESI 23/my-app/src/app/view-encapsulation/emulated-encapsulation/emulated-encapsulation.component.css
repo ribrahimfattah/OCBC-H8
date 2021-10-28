@@ -1,0 +1,11 @@
+h2 {
+  color: rebeccapurple;
+}
+
+.emulated-encapsulation {
+  color: rebeccapurple;
+}
+
+div.emulated-encapsulation {
+  border: rebeccapurple solid 1px
+}

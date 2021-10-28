@@ -1,0 +1,41 @@
+<div id="card">
+  <div id="card-content">
+    <div id="card-title">
+      <h2>LOGIN</h2>
+      <div class="underline-title"></div>
+    </div>
+    <form class="form" [formGroup]="loginData" (ngSubmit)="handleLoginForm()">
+
+      <label style="padding-top:13px">&nbsp;Username</label>
+      <input class="form-content" type="text" name="username" autocomplete="off" required formControlName="username"
+        (change)="handleIsSubmittedState()" />
+      <div class="form-border"></div>
+      <span *ngIf="username?.errors?.minlength" class="error">Name must be at least 5 characters long.</span>
+      <span *ngIf="username?.errors?.required && isSubmitted" class="error">Username required!</span>
+
+      <label style="padding-top:22px">&nbsp;Password</label>
+      <input class="form-content" type="password" name="password" required formControlName="password"
+        (change)="handleIsSubmittedState()" />
+      <div class="form-border" style="margin-bottom: 5px;"></div>
+      <span *ngIf="isSubmitted && password?.errors?.required" class="error">Password required!</span>
+      <ul style="padding-left: 20px;">
+        <li [class.done]="!password?.errors?.minlength && !password?.pristine && password?.value!=0">
+          Password min 6
+          characters
+        </li>
+        <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">
+          Password must
+          have a
+          number or alphabet</li>
+        <!-- <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">Password
+          must have a
+          alphabet</li> -->
+        <!-- <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">Password must have a
+          symbol</li> -->
+      </ul>
+
+      <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+
+    </form>
+  </div>
+</div>

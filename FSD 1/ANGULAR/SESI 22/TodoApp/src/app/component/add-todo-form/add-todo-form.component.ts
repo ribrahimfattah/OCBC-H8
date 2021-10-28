@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Todo } from '../../models/Todo';
 
 @Component({
@@ -8,10 +8,13 @@ import { Todo } from '../../models/Todo';
 })
 export class AddTodoFormComponent implements OnInit {
 
-  @Output() newTodoEvent = new EventEmitter<Todo>();
+  @Input() inputTodo: string = "";
+  @Input() inputDesc: string = "";
 
-  inputTodo: string = "";
-  inputDesc: string = "";
+  @Output() newTodoEvent = new EventEmitter<Todo>();
+  @Output() updateTodoEvent = new EventEmitter<Todo>();
+
+  @Input() formState: string = "add";
 
   constructor() { }
 
@@ -28,5 +31,20 @@ export class AddTodoFormComponent implements OnInit {
     this.newTodoEvent.emit(todo)
     this.inputTodo = "";
     this.inputDesc = "";
+  }
+
+  updateTodo() {
+    // this.inputTodo = "sdfsfsdfsd";
+    // this.inputDesc = todo.desc;
+    const todo: Todo = {
+      title: 'tesss',
+      desc: 'tesss',
+      completed: false
+    };
+
+    this.updateTodoEvent.emit(todo)
+    console.log('okeee');
+  }
+  deleteTodo(id: number) {
   }
 }

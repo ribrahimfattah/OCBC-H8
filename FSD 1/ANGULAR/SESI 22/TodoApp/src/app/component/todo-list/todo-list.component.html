@@ -38,7 +38,7 @@
       <div class="listNotes">
         <ul *ngFor="let todo of todos let i = index;">
           <li>
-            <button class=" btn-note">
+            <button class=" btn-note" (click)="showForm()">
               <label for="">{{ todo.title }}</label>
               <span>{{ todo.desc }}</span>
             </button>
@@ -48,6 +48,7 @@
     </div>
   </div>
   <div class="kanan">
-    <app-add-todo-form (newTodoEvent)="addTodo($event)"></app-add-todo-form>
+    <app-add-todo-form (newTodoEvent)="addTodooo($event)" (updateTodoEvent)="updateTodo($event)"
+      [formState]="formState"></app-add-todo-form>
   </div>
 </div>

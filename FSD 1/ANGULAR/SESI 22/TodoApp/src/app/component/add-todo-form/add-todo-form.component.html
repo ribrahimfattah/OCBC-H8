@@ -12,7 +12,8 @@
     <button type="submit" class="bg-success btn" (click)="addTodo()">Save</button>
   </div>
   <div class="content">
-    <input type="text" class="text" placeholder="Title" [(ngModel)]=inputTodo>
-    <textarea class="text textarea" placeholder="Tuliskan rencana kamu..." [(ngModel)]=inputDesc></textarea>
+    <input type="text" class="text" placeholder="Title" [(ngModel)]=inputTodo [value]="inputTodo">
+    <textarea class="text textarea" placeholder="Tuliskan rencana kamu..."
+      [(ngModel)]=inputDesc>{{ inputDesc }}</textarea>
   </div>
 </div>

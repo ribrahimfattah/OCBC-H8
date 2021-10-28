@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Todo } from '../../models/Todo';
 
 @Component({
@@ -8,7 +8,11 @@ import { Todo } from '../../models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
+  // @Output() updateTodoEvent = new EventEmitter<Todo>();
+
+  formState: string = "add"
   todos: Todo[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -38,8 +42,17 @@ export class TodoListComponent implements OnInit {
     this.todos = this.todos.filter((v, i) => i !== id);
   }
 
-  addTodo(todo: Todo) {
+  addTodooo(todo: Todo) {
     this.todos.push(todo);
   }
 
+  updateTodo(todo: Todo) {
+    console.log(todo)
+    // this.updateTodoEvent.emit(todo)
+    // console.log("halooo")
+  }
+
+  showForm() {
+    this.formState = "edit"
+  }
 }

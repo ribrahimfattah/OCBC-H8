@@ -1,0 +1,11 @@
+h2 {
+  color: blue;
+}
+
+.shadowdom-encapsulation {
+  color: blue;
+}
+
+div.shadowdom-encapsulation {
+  border: blue solid 1px
+}
