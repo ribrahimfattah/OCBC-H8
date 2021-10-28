@@ -32,13 +32,13 @@
       </a>
     </div>
     <div class="frame-notes">
-      <button class="bg-success btn btn-new-note">
+      <button class="bg-success btn btn-new-note" (click)="newTodo()">
         + Note Baru
       </button>
       <div class="listNotes">
         <ul *ngFor="let todo of todos let i = index;">
           <li>
-            <button class=" btn-note" (click)="showForm()">
+            <button class=" btn-note" (click)="editTodo(i)">
               <label for="">{{ todo.title }}</label>
               <span>{{ todo.desc }}</span>
             </button>
@@ -48,7 +48,8 @@
     </div>
   </div>
   <div class="kanan">
-    <app-add-todo-form (newTodoEvent)="addTodooo($event)" (updateTodoEvent)="updateTodo($event)"
-      [formState]="formState"></app-add-todo-form>
+    <app-add-todo-form (newTodoEvent)="addTodooo($event)" (deleteTodoEvent)="deleteTodo($event)"
+      (updateTodoEvent)="updateTodo($event)" [inputTodo]="title" [inputDesc]="desc" [isEdit]="isEdit">
+    </app-add-todo-form>
   </div>
 </div>

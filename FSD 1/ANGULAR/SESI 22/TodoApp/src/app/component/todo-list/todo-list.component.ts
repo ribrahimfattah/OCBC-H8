@@ -8,9 +8,9 @@ import { Todo } from '../../models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
-  // @Output() updateTodoEvent = new EventEmitter<Todo>();
-
-  formState: string = "add"
+  title: string = ""
+  desc: string = ""
+  isEdit = false
   todos: Todo[] = [];
 
   constructor() { }
@@ -38,6 +38,11 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  newTodo() {
+    this.title = ""
+    this.desc = ""
+  }
+
   deleteTodo(id: number) {
     this.todos = this.todos.filter((v, i) => i !== id);
   }
@@ -46,13 +51,27 @@ export class TodoListComponent implements OnInit {
     this.todos.push(todo);
   }
 
-  updateTodo(todo: Todo) {
-    console.log(todo)
-    // this.updateTodoEvent.emit(todo)
-    // console.log("halooo")
+  editTodo(id: number) {
+    this.todos.map((v, i) => {
+      if (i == id) {
+        this.title = v.title
+        this.desc = v.desc
+        this.isEdit = true
+      };
+      console.log(v)
+      return v;
+    })
   }
 
-  showForm() {
-    this.formState = "edit"
+  updateTodo(id: number) {
+    this.todos.map((v, i) => {
+      if (i == id) {
+        v.title = "berhasil ediit"
+        v.desc = "yessss"
+      };
+      console.log(v)
+      return v;
+    })
   }
+
 }

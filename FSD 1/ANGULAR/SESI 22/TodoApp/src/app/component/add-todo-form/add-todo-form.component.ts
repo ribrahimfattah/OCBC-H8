@@ -10,11 +10,12 @@ export class AddTodoFormComponent implements OnInit {
 
   @Input() inputTodo: string = "";
   @Input() inputDesc: string = "";
+  @Input() id: number = 0;
+  @Input() isEdit = false;
 
   @Output() newTodoEvent = new EventEmitter<Todo>();
-  @Output() updateTodoEvent = new EventEmitter<Todo>();
-
-  @Input() formState: string = "add";
+  @Output() updateTodoEvent = new EventEmitter<number>();
+  @Output() deleteTodoEvent = new EventEmitter<number>();
 
   constructor() { }
 
@@ -34,17 +35,19 @@ export class AddTodoFormComponent implements OnInit {
   }
 
   updateTodo() {
-    // this.inputTodo = "sdfsfsdfsd";
-    // this.inputDesc = todo.desc;
-    const todo: Todo = {
-      title: 'tesss',
-      desc: 'tesss',
-      completed: false
-    };
+    // todo: any[] = {
+    //   title: 'tesss',
+    //   desc: 'tesss',
+    //   completed: false
+    // };
 
-    this.updateTodoEvent.emit(todo)
+    this.updateTodoEvent.emit(this.id)
     console.log('okeee');
   }
-  deleteTodo(id: number) {
+
+  deleteTodo() {
+    this.deleteTodoEvent.emit(this.id)
+    this.inputTodo = "";
+    this.inputDesc = "";
   }
 }
