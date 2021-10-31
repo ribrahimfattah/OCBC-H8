@@ -8,6 +8,7 @@ import { Todo } from '../../models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
+  id: number = 0
   title: string = ""
   desc: string = ""
   isEdit = false
@@ -39,6 +40,7 @@ export class TodoListComponent implements OnInit {
   }
 
   newTodo() {
+    this.isEdit = false
     this.title = ""
     this.desc = ""
   }
@@ -54,6 +56,7 @@ export class TodoListComponent implements OnInit {
   editTodo(id: number) {
     this.todos.map((v, i) => {
       if (i == id) {
+        this.id = id
         this.title = v.title
         this.desc = v.desc
         this.isEdit = true
@@ -63,15 +66,25 @@ export class TodoListComponent implements OnInit {
     })
   }
 
-  updateTodo(id: number) {
+  updateTodo(todo: any[]) {
+
+
+    todo.map((v) => {
+      this.id = v.id
+      this.title = v.title
+      this.desc = v.desc
+    })
     this.todos.map((v, i) => {
-      if (i == id) {
-        v.title = "berhasil ediit"
-        v.desc = "yessss"
+      if (i == this.id) {
+        v.title = this.title
+        v.desc = this.desc
       };
       console.log(v)
       return v;
     })
+
+    this.title = ""
+    this.desc = ""
   }
 
 }

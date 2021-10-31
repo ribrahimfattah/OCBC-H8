@@ -1,0 +1,14 @@
+<div class="container">
+  <h5 class="text-center mt-3">List of All the Countries in Our Database</h5>
+  <div class="row m-5 justify-content-center">
+    <div class="card m-2" style="width: 18rem;" *ngFor="let country of Countries">
+      <img class="card-img-top mt-2" src="https://source.unsplash.com/286x180/?{{ country.name }}" alt="Card image cap">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ country.name }}</h5>
+        <h5 class="card-title">Capital</h5>
+        <p class="card-text">({{ country.capital }})</p>
+        <a class="btn btn-primary" (click)="getCountryId(country.id)">Detail</a>
+      </div>
+    </div>
+  </div>
+</div>

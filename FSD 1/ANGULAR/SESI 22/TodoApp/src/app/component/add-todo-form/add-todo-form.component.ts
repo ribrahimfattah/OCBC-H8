@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Todo } from '../../models/Todo';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-todo-form',
@@ -7,6 +8,8 @@ import { Todo } from '../../models/Todo';
   styleUrls: ['./add-todo-form.component.css']
 })
 export class AddTodoFormComponent implements OnInit {
+
+  todos: Todo[] = [];
 
   @Input() inputTodo: string = "";
   @Input() inputDesc: string = "";
@@ -16,38 +19,64 @@ export class AddTodoFormComponent implements OnInit {
   @Output() newTodoEvent = new EventEmitter<Todo>();
   @Output() updateTodoEvent = new EventEmitter<number>();
   @Output() deleteTodoEvent = new EventEmitter<number>();
+  @Output() tesTodoEvent = new EventEmitter<any[]>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addTodo() {
-    const todo: Todo = {
-      title: this.inputTodo,
-      desc: this.inputDesc,
-      completed: false
-    };
+  todoData = new FormGroup({
+    inputTodo: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(50)
+    ])
+  })
 
-    this.newTodoEvent.emit(todo)
-    this.inputTodo = "";
-    this.inputDesc = "";
+  get title() {
+    return this.todoData.get('inputTodo')
+  }
+
+  addTodo() {
+    if (this.inputTodo == "") {
+
+    } else {
+
+      const todo: Todo = {
+        title: this.inputTodo,
+        desc: this.inputDesc,
+        completed: false
+      };
+
+      this.newTodoEvent.emit(todo)
+      this.inputTodo = "";
+      this.inputDesc = "";
+    }
   }
 
   updateTodo() {
-    // todo: any[] = {
-    //   title: 'tesss',
-    //   desc: 'tesss',
-    //   completed: false
-    // };
+    if (this.inputTodo == "") {
 
-    this.updateTodoEvent.emit(this.id)
-    console.log('okeee');
+    } else {
+      const tes: any[] = [
+        {
+          "id": this.id,
+          "title": this.inputTodo,
+          "desc": this.inputDesc
+
+        }
+      ]
+      this.tesTodoEvent.emit(tes)
+    }
+
   }
+
 
   deleteTodo() {
     this.deleteTodoEvent.emit(this.id)
     this.inputTodo = "";
     this.inputDesc = "";
+    this.isEdit = false
   }
 }

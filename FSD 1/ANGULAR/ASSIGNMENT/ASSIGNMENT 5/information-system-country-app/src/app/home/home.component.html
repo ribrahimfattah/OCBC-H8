@@ -1,0 +1,50 @@
+<div class="container m-5">
+  <div class="row justify-content-center text-center">
+
+    <h3>Fun Facts About Countries</h3>
+    <div>
+      <button class="btn btn-secondary m-2" (click)="isHome()">Go Back to Homepage</button>
+      <button class="btn btn-secondary" (click)="isAllCountry()">List of all Countries</button>
+    </div>
+  </div>
+
+  <div *ngIf="isHomeShown">
+    <div class="row justify-content-center text-center mt-3">
+      <h5 class="mb-3">Three Most Populated Countries</h5>
+      <ng-template ngFor let-country [ngForOf]="sortPopulation" let-i="index">
+        <div class="col-2" *ngIf="i < 3">
+          <div class="card text-white" style="width: 10rem; height: 10rem;background: #E65856;background:
+            url('https://source.unsplash.com/{{ country.name }}')">
+            <div class=" card-body" (click)="getCountryId(country.id, 0)">
+              <h5 class="card-title mt-3">{{ country.name }}</h5>
+              <p class="card-text mb-0">{{ country.population | number }}</p>
+              <p class="card-text">People</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="row justify-content-center text-center mt-3">
+      <h5 class="mb-3">Three Largest Countries (Area)</h5>
+      <ng-template ngFor let-country [ngForOf]="sortArea" let-i="index">
+        <div class="col-2" *ngIf="i < 3">
+          <div class="card text-white" style="width: 10rem; height: 10rem;background: #E65856;background:
+            url('https://source.unsplash.com/{{ country.name }}')">
+            <div class=" card-body" (click)="getCountryId(country.id, 0)">
+              <h5 class="card-title mt-5">{{ country.name }}</h5>
+              <p class="card-text">{{ country.area | number }} Km<sup>2</sup></p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="isAllCountryShown">
+    <app-all-country [Countries]="countries" (getCountryEvent)="getCountryId($event, 1)"></app-all-country>
+  </div>
+
+  <div *ngIf="isDetailShown">
+    <app-country-detail [getCountry]="getCountry" (backEvent)="isBack($event)"></app-country-detail>
+  </div>
+</div>

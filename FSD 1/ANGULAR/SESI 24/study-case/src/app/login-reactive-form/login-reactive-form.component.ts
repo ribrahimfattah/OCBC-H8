@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-login-reactive-form',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginReactiveFormComponent implements OnInit {
 
-  constructor() { }
+  // constructor() { }
 
   loginData = new FormGroup({
     username: new FormControl('', [
@@ -18,7 +19,15 @@ export class LoginReactiveFormComponent implements OnInit {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
-      Validators.pattern('[a-zA-Z0-9 ]*')
+      Validators.pattern('[a-zA-Z0-9 ]*'),
+      CustomValidators.patterValidatorNumeric(),
+      CustomValidators.patterValidatorUpperCase(),
+      CustomValidators.patterValidatorLowerCase(),
+      CustomValidators.patterValidatorSymbol(),
+      // CustomValidators.patternValidator(/\d/, { hasNumber: true }),
+      // CustomValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+      // CustomValidators.patternValidator(/[a-z]/, { hasSmallCase: true }),
+      // CustomValidators.patternValidator(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/, { hasSpecialCharacters: true })
     ])
   })
 
@@ -40,6 +49,9 @@ export class LoginReactiveFormComponent implements OnInit {
   // }
 
   handleLoginForm() {
+    if (!this.username?.errors && !this.password?.errors) {
+      alert("Welcome!")
+    }
     this.isSubmitted = true
     // this.validateForm()
     // console.log(this.loginData.get('username'))
@@ -55,5 +67,4 @@ export class LoginReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

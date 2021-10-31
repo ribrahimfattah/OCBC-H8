@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row m-5 justify-content-center">
+    <div class="card m-2" style="width: 25rem;" *ngFor="let country of getCountry">
+      <img class="card-img-top mt-2" src="https://source.unsplash.com/286x180/?{{ country.name }}" alt="Card image cap">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ country.name }}</h5>
+        <p class="card-text mb-0"> Capital</p>
+        <p class="card-text"> ({{ country.capital }})</p>
+        <table class="text-center">
+          <tr>
+            <td style="width: 100px;" class="text-start text-success">Capital</td>
+            <td style="width: 15px;" class="text-start text-success">:</td>
+            <td class="text-start">{{ country.capital }}</td>
+          </tr>
+          <tr>
+            <td class="text-start text-success">Area</td>
+            <td class="text-start text-success">:</td>
+            <td class="text-start">{{ country.area | number }} Km<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td class="text-start text-success">Population</td>
+            <td class="text-start text-success">:</td>
+            <td class="text-start">{{ country.population | number }}</td>
+          </tr>
+          <tr>
+            <td class="text-start text-success">GDP</td>
+            <td class="text-start text-success">:</td>
+            <td class="text-start">{{ country.gdp | number }} USD</td>
+          </tr>
+          <tr>
+            <td class="text-start text-success">Currency</td>
+            <td class="text-start text-success">:</td>
+            <td class="text-start">{{ country.currency }}</td>
+          </tr>
+        </table>
+        <a class="btn btn-danger mt-3 py-0 px-2" (click)="isBack()">Back</a>
+      </div>
+    </div>
+  </div>
+</div>

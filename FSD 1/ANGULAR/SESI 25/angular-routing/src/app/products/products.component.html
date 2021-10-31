@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row m-5">
+    <div class="card" style="width: 18rem;" *ngFor="let product of products">
+      <img class="card-img-top" src="https://source.unsplash.com/286x180/?{{ product.name }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">Rp. {{ product.price }}</p>
+        <a [routerLink]="['/products/', product.id]" class="btn btn-primary">Detail</a>
+      </div>
+    </div>
+  </div>
+</div>

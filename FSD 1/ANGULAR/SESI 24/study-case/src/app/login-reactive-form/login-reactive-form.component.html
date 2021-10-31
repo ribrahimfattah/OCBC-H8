@@ -23,18 +23,21 @@
           Password min 6
           characters
         </li>
-        <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">
-          Password must
-          have a
-          number or alphabet</li>
-        <!-- <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">Password
+        <li [class.done]="!password?.errors?.passHasNum && !password?.pristine && password?.value!=0">Password
           must have a
-          alphabet</li> -->
-        <!-- <li [class.done]="!password?.errors?.pattern && !password?.pristine && password?.value!=0">Password must have a
-          symbol</li> -->
+          Number</li>
+        <li [class.done]="!password?.errors?.passHasCap && !password?.pristine && password?.value!=0">
+          Password must
+          have a Capital Case</li>
+        <li [class.done]="!password?.errors?.passHasSmall && !password?.pristine && password?.value!=0">
+          Password must
+          have a Small Case</li>
+        <li [class.done]="!password?.errors?.passHasSymbol && !password?.pristine && password?.value!=0">
+          Password must
+          have a Special Chraracter</li>
       </ul>
 
-      <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+      <input style="margin-top: 3px;" id="submit-btn" type="submit" name="submit" value="LOGIN" />
 
     </form>
   </div>
