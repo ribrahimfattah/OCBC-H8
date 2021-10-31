@@ -17,7 +17,7 @@ export class AddTodoFormComponent implements OnInit {
   @Input() isEdit = false;
 
   @Output() newTodoEvent = new EventEmitter<Todo>();
-  @Output() updateTodoEvent = new EventEmitter<number>();
+  @Output() doneTodoEvent = new EventEmitter<number>();
   @Output() deleteTodoEvent = new EventEmitter<number>();
   @Output() tesTodoEvent = new EventEmitter<any[]>();
 
@@ -72,11 +72,15 @@ export class AddTodoFormComponent implements OnInit {
 
   }
 
+  doneTodo() {
+    this.doneTodoEvent.emit(this.id)
+    this.inputTodo = ""
+    this.inputDesc = ""
+  }
 
   deleteTodo() {
     this.deleteTodoEvent.emit(this.id)
     this.inputTodo = "";
     this.inputDesc = "";
-    this.isEdit = false
   }
 }

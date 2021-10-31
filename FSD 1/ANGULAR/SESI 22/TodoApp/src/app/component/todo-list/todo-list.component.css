@@ -150,3 +150,7 @@ ul {
 .btn-note span {
   color: #545454;
 }
+
+.done {
+  text-decoration: line-through;
+}

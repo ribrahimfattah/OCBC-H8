@@ -28,7 +28,7 @@
     <div class="logo">
       <a href="#">
         <h2>Todo</h2>
-        <span>App (masih proses improve)</span>
+        <span>App</span>
       </a>
     </div>
     <div class="frame-notes">
@@ -38,7 +38,8 @@
       <div class="listNotes">
         <ul *ngFor="let todo of todos let i = index;">
           <li>
-            <button class=" btn-note" (click)="editTodo(i)">
+            <button class=" btn-note" (click)="editTodo(i)" [class.bg-warning]="todo.completed == true"
+              [class.done]="todo.completed == true">
               <label for="">{{ todo.title }}</label>
               <span>{{ todo.desc }}</span>
             </button>
@@ -49,7 +50,8 @@
   </div>
   <div class="kanan">
     <app-add-todo-form (newTodoEvent)="addTodooo($event)" (deleteTodoEvent)="deleteTodo($event)"
-      (tesTodoEvent)="updateTodo($event)" [inputTodo]="title" [inputDesc]="desc" [isEdit]="isEdit" [id]="id">
+      (tesTodoEvent)="updateTodo($event)" (doneTodoEvent)="toggleDone($event)" [inputTodo]="title" [inputDesc]="desc"
+      [isEdit]="isEdit" [id]="id">
     </app-add-todo-form>
   </div>
 </div>

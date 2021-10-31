@@ -34,8 +34,7 @@ export class TodoListComponent implements OnInit {
   toggleDone(id: number) {
     this.todos.map((v, i) => {
       if (i == id) v.completed = !v.completed;
-      console.log(v)
-      return v;
+      this.isEdit = false
     })
   }
 
@@ -47,6 +46,7 @@ export class TodoListComponent implements OnInit {
 
   deleteTodo(id: number) {
     this.todos = this.todos.filter((v, i) => i !== id);
+    this.isEdit = false
   }
 
   addTodooo(todo: Todo) {
@@ -61,13 +61,10 @@ export class TodoListComponent implements OnInit {
         this.desc = v.desc
         this.isEdit = true
       };
-      console.log(v)
-      return v;
     })
   }
 
   updateTodo(todo: any[]) {
-
 
     todo.map((v) => {
       this.id = v.id
@@ -79,8 +76,6 @@ export class TodoListComponent implements OnInit {
         v.title = this.title
         v.desc = this.desc
       };
-      console.log(v)
-      return v;
     })
 
     this.title = ""

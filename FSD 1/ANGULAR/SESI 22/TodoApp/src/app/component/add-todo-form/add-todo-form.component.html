@@ -8,16 +8,17 @@
 
 <div class="formNotes">
   <div class="menu">
+    <button type="submit" class="btn btn-warning float-start" (click)="doneTodo()" *ngIf="isEdit">Done</button>
     <button type="button" class="bg-danger btn btn-delete text-white" (click)="deleteTodo()">Delete</button>
     <button type="submit" class="bg-success btn text-white" (click)="addTodo()" *ngIf="!isEdit">Save</button>
     <button type="submit" class="bg-success btn text-white" (click)="updateTodo()" *ngIf="isEdit">Update</button>
   </div>
   <div class="content">
-    <form [formGroup]="todoData">
-      <input type="text" hidden [value]="id" *ngIf="isEdit">
-      <input type="text" class="text" placeholder="Title" [(ngModel)]=inputTodo>
-      <textarea class="text textarea" placeholder="Tuliskan rencana kamu..."
-        [(ngModel)]=inputDesc>{{ inputDesc }}</textarea>
-    </form>
+    <!-- <form [formGroup]="todoData"> -->
+    <input type="text" hidden [value]="id" *ngIf="isEdit">
+    <input type="text" class="text" placeholder="Title" [(ngModel)]=inputTodo>
+    <textarea class="text textarea" placeholder="Tuliskan rencana kamu..."
+      [(ngModel)]=inputDesc>{{ inputDesc }}</textarea>
+    <!-- </form> -->
   </div>
 </div>
