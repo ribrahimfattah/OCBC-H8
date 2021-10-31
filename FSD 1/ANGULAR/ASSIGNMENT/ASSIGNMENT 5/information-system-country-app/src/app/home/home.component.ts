@@ -97,9 +97,14 @@ export class HomeComponent implements OnInit {
 
   isBack(id: number) {
     if (id == 0) {
-      this.isHome()
-    } else {
-      this.isAllCountry()
+      this.isHomeShown = true;
+      this.isAllCountryShown = false;
+      this.isDetailShown = false;
+    }
+    if (id == 1) {
+      this.isHomeShown = false;
+      this.isAllCountryShown = true;
+      this.isDetailShown = false;
     }
   }
 
@@ -108,7 +113,8 @@ export class HomeComponent implements OnInit {
     this.isHomeShown = false;
     this.isAllCountryShown = false;
     this.isDetailShown = true;
-    this.source = 0
+    this.source = source;
+
     this.countries.map((v) => {
       if (v.id == id) {
         this.getCountry = [

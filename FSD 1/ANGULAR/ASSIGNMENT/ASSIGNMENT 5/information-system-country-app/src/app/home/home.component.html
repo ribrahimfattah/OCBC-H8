@@ -45,6 +45,6 @@
   </div>
 
   <div *ngIf="isDetailShown">
-    <app-country-detail [getCountry]="getCountry" (backEvent)="isBack($event)"></app-country-detail>
+    <app-country-detail [getCountry]="getCountry" (backEvent)="isBack($event)" [source]="source"></app-country-detail>
   </div>
 </div>
