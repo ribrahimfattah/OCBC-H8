@@ -1,0 +1,134 @@
+<div class="row justify-content-center mt-5">
+  <div class="card shadow p-3 mb-5 bg-body rounded" style="border: 0;width: 60%;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><button class="btn btn-secondary" (click)="open(content, 'create')">Add
+          Employee</button></li>
+      <li class="list-group-item">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employees">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.title }}</td>
+              <td>{{ employee.firstName }}</td>
+              <td>{{ employee.lastName }}</td>
+              <td>{{ employee.role }}</td>
+              <td>{{ employee.email }}</td>
+              <td>
+                <a class="btn btn-success" (click)="getEmployeeById(employee.id)" (click)="open(content, 'read')"><i
+                    class="bi bi-eye"></i></a>
+                <a class="btn btn-warning m-1" (click)="getEmployeeById(employee.id)" (click)="open(content, 'edit')"><i
+                    class="bi bi-pencil"></i></a>
+                <a class="btn btn-danger" (click)="getEmployeeById(employee.id)" (click)="open(content, 'delete')"><i
+                    class="bi bi-trash"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- MODAL -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title" *ngIf="action == 'create'">Add Employee</h4>
+    <h4 class="modal-title" id="modal-basic-title" *ngIf="action == 'read'">Data Employee</h4>
+    <h4 class="modal-title" id="modal-basic-title" *ngIf="action == 'edit'">Edit Employee</h4>
+    <h4 class="modal-title" id="modal-basic-title" *ngIf="action == 'delete'">Delete Employee</h4>
+    <button type="button" class="close btn btn-danger" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true"><i class="bi bi-x-lg"></i></span>
+    </button>
+  </div>
+  <div class=" modal-body">
+    <ng-template [ngIf]="action != 'delete'">
+      <form class="form" [formGroup]="formData" (ngSubmit)="actionToggle()">
+
+        <label style="padding-top:13px">&nbsp;Title</label>
+        <select [(ngModel)]="title" formControlName="title" [disabled]="action == 'read'" class="form-content"
+          aria-label="Default select example" required>
+          <option [selected]="title != ('Mr' || 'Mrs' || 'Ms')">Select title</option>
+          <option value="Mr" [selected]="title == 'Mr'">Mr</option>
+          <option value="Mrs" [selected]="title == 'Mrs'">Mrs</option>
+          <option value="Ms" [selected]="title == 'Ms'">Ms</option>
+        </select>
+        <!-- <input [(ngModel)]="title" [readonly]="action == 'read'" class="form-content" type="text" name="title"
+          autocomplete="off" required /> -->
+        <div class="form-border"></div>
+        <span *ngIf="gettitle?.errors?.required && isSubmitted" class="error">Title required!</span>
+
+        <label style="padding-top:13px">&nbsp;First Name</label>
+        <input [(ngModel)]="firstName" formControlName="firstName" [readonly]="action == 'read'" class="form-content"
+          type="text" name="firstName" autocomplete="off" required />
+        <div class="form-border"></div>
+        <span *ngIf="getfirstName?.errors?.required && isSubmitted" class="error">First name required!</span>
+
+        <label style="padding-top:13px">&nbsp;Last Name</label>
+        <input [(ngModel)]="lastName" formControlName="lastName" [readonly]="action == 'read'" class="form-content"
+          type="text" name="lastName" autocomplete="off" required />
+        <div class="form-border"></div>
+        <span *ngIf="getlastName?.errors?.required && isSubmitted" class="error">Last name required!</span>
+
+        <label style="padding-top:13px">&nbsp;Role</label>
+        <select [(ngModel)]="role" formControlName="role" [disabled]="action == 'read'" class="form-content"
+          aria-label="Default select example" required>
+          <option [selected]="role != ('Admin' || 'User')">Select role</option>
+          <option value="Admin" [selected]="role == 'Admin'">Admin</option>
+          <option value="User" [selected]="role == 'User'">User</option>
+        </select>
+        <!-- <input [(ngModel)]="role" [readonly]="action == 'read'" class="form-content" type="text" name="role"
+          autocomplete="off" required /> -->
+        <div class="form-border"></div>
+        <span *ngIf="getrole?.errors?.required && isSubmitted" class="error">Role required!</span>
+
+        <label style="padding-top:13px">&nbsp;Email</label>
+        <input [(ngModel)]="email" formControlName="email" [readonly]="action != 'create'" class="form-content"
+          type="text" name="email" autocomplete="off" required />
+        <div class="form-border"></div>
+        <span *ngIf="getemail?.errors?.required && isSubmitted" class="error">Email required!</span>
+
+        <ng-template [ngIf]="action == 'create'">
+          <label style="padding-top:13px">&nbsp;Password</label>
+          <input [(ngModel)]="password" formControlName="password" class="form-content" type="password" name="password"
+            autocomplete="off" required />
+          <div class="form-border"></div>
+          <span *ngIf="getpassword?.errors?.required && isSubmitted" class="error">Password required!</span>
+
+          <label style="padding-top:13px">&nbsp;Confirm Password</label>
+          <input [(ngModel)]="confirmPassword" formControlName="confirmPassword" class="form-content" type="password"
+            name="confirmPassword" autocomplete="off" required />
+          <div class="form-border"></div>
+          <span *ngIf="getconfirmPassword?.errors?.required && isSubmitted" class="error">Confirm password
+            required!</span>
+          <span *ngIf="getconfirmPassword?.errors?.matching && isSubmitted" class="error">Confirm password
+            does not match!</span>
+        </ng-template>
+        <!-- <span *ngIf="username?.errors?.minlength" class="error">Name must be at least 5 characters long.</span>
+      <span *ngIf="username?.errors?.required && isSubmitted" class="error">Username required!</span> -->
+        <div class="text-center mt-3">
+          <button type="reset" [hidden]="action == 'read'" class="btn btn-sm btn-warning text-white">Reset</button>
+          <button type="button" class="btn btn-sm btn-danger m-2" (click)="d('Cross click')">Cancel</button>
+          <button type="submit" [hidden]="action == 'read'" class="btn btn-sm btn-success">Save</button>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template [ngIf]="action == 'delete'">
+      <p class="text-center">Are you sure?</p>
+      <div class="text-center mt-3">
+        <button type="button" class="btn btn-sm btn-danger m-2" (click)="d('Cross click')">Cancel</button>
+        <button type="button" class="btn btn-sm btn-success" (click)="actionToggle()">Delete</button>
+      </div>
+    </ng-template>
+  </div>
+
+</ng-template>

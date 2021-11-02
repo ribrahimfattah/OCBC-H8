@@ -1,0 +1,33 @@
+<form class="form">
+
+  <label style="padding-top:13px">&nbsp;Title</label>
+  <input [(ngModel)]="title" class="form-content" type="text" name="title" autocomplete="off" required />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;First Name</label>
+  <input [(ngModel)]="firstName" class="form-content" type="text" name="firstName" autocomplete="off" required />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;Last Name</label>
+  <input [(ngModel)]="lastName" class="form-content" type="text" name="lastName" autocomplete="off" required />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;Role</label>
+  <input [(ngModel)]="role" class="form-content" type="text" name="role" autocomplete="off" required />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;Email</label>
+  <input [(ngModel)]="email" class="form-content" type="text" name="email" autocomplete="off" required />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;Password</label>
+  <input class="form-content" type="text" name="password" autocomplete="off" required [(ngModel)]=password />
+  <div class="form-border"></div>
+
+  <label style="padding-top:13px">&nbsp;Confirm Password</label>
+  <input class="form-content" type="text" name="confirmPassword" autocomplete="off" required
+    [(ngModel)]=confirmPassword />
+  <div class="form-border"></div>
+  <!-- <span *ngIf="username?.errors?.minlength" class="error">Name must be at least 5 characters long.</span>
+      <span *ngIf="username?.errors?.required && isSubmitted" class="error">Username required!</span> -->
+</form>
