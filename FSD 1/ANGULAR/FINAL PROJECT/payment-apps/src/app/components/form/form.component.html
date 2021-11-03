@@ -1,0 +1,68 @@
+<!-- <div *ngFor="let payment of payments"> -->
+<form [formGroup]="formData" (ngSubmit)="actionToggle()">
+  <button type="reset" class="btn alert-success" (click)=reset()><i class="bi bi-file-earmark-plus-fill"></i> New
+    Payment</button>
+
+  <div class="mb-3">
+    <label class="form-label">CARD OWNER NAME</label>
+    <input [(ngModel)]="cardOwnerName" [readonly]="action == 'read'" formControlName="cardOwnerName" type="text"
+      class="form-control" autocomplete="off">
+    <span class="form-text text-danger" *ngIf="getCardOwnerName?.errors?.required && isSubmitted">Card owner name is
+      required!</span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">CARD NUMBER</label>
+    <!-- <input type="text" formControlName="cardNumber" [(ngModel)]="cardNumber"> -->
+    <input [(ngModel)]="cardNumber" [readonly]="action == 'read'" type="number" class="form-control"
+      formControlName="cardNumber" autocomplete="off" oninput="javascript: if(this.value.length > this.maxLength)
+      this.value = this.value.slice(0, this.maxLength);" maxlength="10">
+    <span class="form-text text-danger" *ngIf="getCardNumber?.errors?.required && isSubmitted">Card number is
+      required!</span>
+    <span class="form-text text-danger" *ngIf="getCardNumber?.errors?.min">Card number must 10 characters</span>
+  </div>
+
+  <div class="row mb-3">
+
+    <div class="col">
+      <label class="form-label">SECURITY CODE</label>
+      <input [(ngModel)]="securityCode" [readonly]="action == 'read'" type="number" class="form-control"
+        formControlName="securityCode" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength)
+        this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+      <span class="form-text text-danger" *ngIf="getSecurityCode?.errors?.required && isSubmitted">Security code is
+        required!</span>
+      <span class="form-text text-danger" *ngIf="getSecurityCode?.errors?.min">Security code must 6 characters</span>
+    </div>
+
+    <div class="col">
+      <label class="form-label">VALIDE THROUGH</label>
+      <input [(ngModel)]="expirationDate" [readonly]="action == 'read'" type="date" id="datepicker" class="form-control"
+        autocomplete="off" formControlName="expirationDate">
+      <span class="form-text text-danger" *ngIf="getExpirationDate?.errors?.required && isSubmitted">Exp. date is
+        required!</span>
+    </div>
+
+  </div>
+
+  <div class="d-grid gap-2">
+    <button [hidden]="action == 'read'" [disabled]="proccess" type="submit" class="btn btn-primary btn-block"><span
+        *ngIf="proccess" class="spinner-border spinner-border-sm"></span>
+      SUBMIT</button>
+  </div>
+
+</form>
+<!-- </div> -->
+<script>
+  $("#datepicker").kendoDatePicker({
+    value: new Date(2013, 10, 10),
+    format: "MMM yyyy",
+    parseFormats: ["MMM yyyy"],
+    depth: "year",
+    start: "year"
+  });
+
+  var datepicker = $("#datepicker").data("kendoDatePicker");
+
+  datepicker.value(new Date());
+
+</script>
