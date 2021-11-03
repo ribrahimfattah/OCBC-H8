@@ -3,7 +3,7 @@
 Nama : Rasyi Ibrahim fattah
 Kode Peserta : FSDO001ONL030
 
-Link Github : 
+Link Github : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/ANGULAR/FINAL%20PROJECT
 Link API : https://payment-030.herokuapp.com/finalproject/paymentdetails
 
 <!-- *********** Disclaimer ********** -->
