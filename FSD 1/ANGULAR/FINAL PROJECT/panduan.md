@@ -1,6 +1,6 @@
 ========== FINAL PROJECT ANGULAR ==========
 
-Nama : Rasyi Ibrahim Fattah
+Nama : Rasyid Ibrahim Fattah
 Kode Peserta : FSDO001ONL030
 
 Link Github : https://github.com/ribrahimfattah/OCBC-H8/tree/main/FSD%201/ANGULAR/FINAL%20PROJECT
