@@ -70,35 +70,6 @@ export class FormComponent implements OnInit {
     // console.log(this.action)
   }
 
-  // ngDoCheck() {
-  //   if (this.action == 'read') {
-  //     console.log("ini read")
-  //     console.log(this.cardOwnerName)
-  //     console.log(this.cardNumber)
-  //     console.log(this.securityCode)
-  //     console.log(this.expirationDate)
-  //   }
-  //   if (this.action == 'create') {
-  //     console.log("ini create")
-  //     this.cardOwnerName = ""
-  //     this.cardNumber = ""
-  //     this.securityCode = ""
-  //     this.expirationDate = ""
-
-  //   }
-  //   if (this.action == 'edit') {
-  //     console.log("ini edit")
-  //   }
-  // }
-  // handleIsSubmittedState() {
-  //   if (this.isSubmitted === true) {
-  //     this.isSubmitted = false
-  //     console.log("bnisako")
-  //   }
-
-  //   console.log(this.isSubmitted)
-  // }
-
   actionToggle() {
     this.isSubmitted = true
     if (!this.getCardOwnerName?.errors && !this.getCardNumber?.errors && !this.getSecurityCode?.errors && !this.getExpirationDate?.errors) {

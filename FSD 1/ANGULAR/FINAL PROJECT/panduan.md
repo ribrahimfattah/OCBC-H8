@@ -36,5 +36,11 @@ Link API : https://payment-030.herokuapp.com/finalproject/paymentdetails
     /* Exp. Date
         - required
         - date
-    
+<!-- ************************************* -->
+
+<!-- ******************** ALUR ***************** -->
+/*  Home sebagai parent, meanampung child component form dan payment
+/*  dari component payment akan mengirim data ke home lalu dikirim lagi ke form untuk ditampilkan ke form
+/*  kemudian dari form akan mengirimkan data ke home untuk di proses request data ke API
+
 === TERIMA KASIH ===
