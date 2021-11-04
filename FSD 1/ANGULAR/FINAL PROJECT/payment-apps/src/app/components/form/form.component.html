@@ -6,7 +6,7 @@
   <div class="mb-3">
     <label class="form-label">CARD OWNER NAME</label>
     <input [(ngModel)]="cardOwnerName" [readonly]="action == 'read'" formControlName="cardOwnerName" type="text"
-      class="form-control" autocomplete="off">
+      class="form-control" autocomplete="off" placeholder="Full Name">
     <span class="form-text text-danger" *ngIf="getCardOwnerName?.errors?.required && isSubmitted">Card owner name is
       required!</span>
   </div>
@@ -16,7 +16,7 @@
     <!-- <input type="text" formControlName="cardNumber" [(ngModel)]="cardNumber"> -->
     <input [(ngModel)]="cardNumber" [readonly]="action == 'read'" type="number" class="form-control"
       formControlName="cardNumber" autocomplete="off" oninput="javascript: if(this.value.length > this.maxLength)
-      this.value = this.value.slice(0, this.maxLength);" maxlength="16">
+      this.value = this.value.slice(0, this.maxLength);" maxlength="16" placeholder="16 Digit Card Number">
     <span class="form-text text-danger" *ngIf="getCardNumber?.errors?.required && isSubmitted">Card number is
       required!</span>
     <span class="form-text text-danger" *ngIf="getCardNumber?.errors?.min">Card number must 16 characters</span>
@@ -28,7 +28,7 @@
       <label class="form-label">SECURITY CODE</label>
       <input [(ngModel)]="securityCode" [readonly]="action == 'read'" type="number" class="form-control"
         formControlName="securityCode" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength)
-        this.value = this.value.slice(0, this.maxLength);" maxlength="3">
+        this.value = this.value.slice(0, this.maxLength);" maxlength="3" placeholder="3 Digit Security Code">
       <span class="form-text text-danger" *ngIf="getSecurityCode?.errors?.required && isSubmitted">Security code is
         required!</span>
       <span class="form-text text-danger" *ngIf="getSecurityCode?.errors?.min">Security code must 3 characters</span>
