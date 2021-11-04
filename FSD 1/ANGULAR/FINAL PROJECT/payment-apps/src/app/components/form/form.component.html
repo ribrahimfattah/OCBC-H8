@@ -34,12 +34,21 @@
       <span class="form-text text-danger" *ngIf="getSecurityCode?.errors?.min">Security code must 3 characters</span>
     </div>
 
-    <div class="col">
+    <!-- <div class="col">
       <label class="form-label">VALIDE THROUGH</label>
       <input [(ngModel)]="expirationDate" [readonly]="action == 'read'" type="date" id="datepicker" class="form-control"
         autocomplete="off" formControlName="expirationDate">
       <span class="form-text text-danger" *ngIf="getExpirationDate?.errors?.required && isSubmitted">Exp. date is
         required!</span>
+    </div> -->
+    <div class="col">
+      <label class="form-label">VALIDE THROUGH</label>
+      <input *ngIf="action != 'read'" [(ngModel)]="expirationDate" [readonly]="action == 'read'" type="date"
+        id="datepicker" class="form-control" autocomplete="off" formControlName="expirationDate">
+      <span class="form-text text-danger" *ngIf="getExpirationDate?.errors?.required && isSubmitted">Exp. date is
+        required!</span>
+      <textarea *ngIf="action == 'read'" class="form-control" readonly cols="2" rows="1"
+        style="resize: none;">{{ expirationDate | date : 'M/yy' }}</textarea>
     </div>
 
   </div>
