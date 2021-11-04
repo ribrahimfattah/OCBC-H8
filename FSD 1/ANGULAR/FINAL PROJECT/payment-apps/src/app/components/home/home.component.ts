@@ -21,22 +21,26 @@ export class HomeComponent implements OnInit {
   cardNumber: string = ""
   securityCode: string = ""
 
-  message: string = 'Snack Bar opened.';
+  message: string = "";
+  panel: string = "";
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private payment: PaymentService, private snackBar: MatSnackBar) { }
+  constructor(private payment: PaymentService, private snackBar: MatSnackBar) {
 
-  notif() {
-    let config = new MatSnackBarConfig();
-    config.verticalPosition = this.verticalPosition;
-    config.horizontalPosition = this.horizontalPosition;
-    this.snackBar.open(this.message, undefined, {
+  }
+
+  notif(message: string, panel: string) {
+    // let config = new MatSnackBarConfig();
+    // config.verticalPosition = this.verticalPosition;
+    // config.horizontalPosition = this.horizontalPosition;
+    this.snackBar.open(message, undefined, {
       duration: 2000,
-      panelClass: ['red-snackbar']
-      // horizontalPosition: this.horizontalPosition,
-      // verticalPosition: this.verticalPosition
+      panelClass: [panel],
+      horizontalPosition: 'end',
+      verticalPosition: 'top'
     });
+
   }
 
   ngOnInit(): void {
@@ -64,14 +68,23 @@ export class HomeComponent implements OnInit {
   store(payment: any) {
     this.proccess = true
     this.payment.postPayment(payment).subscribe(x => location.reload())
+    this.message = "Payment created"
+    this.panel = "green-snackbar"
+    this.notif(this.message, this.panel)
   }
 
   update(payment: any) {
     this.proccess = true
     this.payment.putPayment(payment, this.paymentDataId).subscribe(x => location.reload())
+    this.message = "Payment updated"
+    this.panel = "green-snackbar"
+    this.notif(this.message, this.panel)
   }
 
   deletePayment(id: number) {
     this.payment.deletePayment(id).subscribe(x => location.reload())
+    this.message = "Payment deleted"
+    this.panel = "red-snackbar"
+    this.notif(this.message, this.panel)
   }
 }

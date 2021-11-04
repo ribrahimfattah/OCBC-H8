@@ -10,12 +10,20 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.red-snackbar {
-  background-color: rgb(153, 50, 50);
+
+.green-snackbar {
+  background-color: rgb(1, 156, 123);
   color: lightgoldenrodyellow;
+  margin-right: 0px;
+}
+
+.red-snackbar {
+  background-color: rgb(175, 41, 52);
+  color: lightgoldenrodyellow;
+  margin-right: 0px;
 }
 
 .cdk-overlay-container {
-  margin-top: 50 !important;
-  margin-left: 150px !important;
+  /* margin-top: 50 !important;
+  margin-left: 150px !important; */
 }

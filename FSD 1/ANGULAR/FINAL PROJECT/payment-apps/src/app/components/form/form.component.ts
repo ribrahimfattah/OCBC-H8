@@ -37,11 +37,11 @@ export class FormComponent implements OnInit {
       // Validators.minLength(10),
       // Validators.maxLength(10),
       // CustomValidators.checkLimit(10, 10),
-      CustomValidators.min(1000000000)
+      CustomValidators.min(1000000000000000)
     ]),
     securityCode: new FormControl('', [
       Validators.required,
-      CustomValidators.min(100000)
+      CustomValidators.min(100)
     ]),
     expirationDate: new FormControl('', [
       Validators.required
