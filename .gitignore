@@ -53,3 +53,7 @@ dkms.conf
 
 BACKUP 2FA HACKTIV8 SLACK.txt
 Onboarding Peserta NEON OCBC NISP Bootcamp.pptx
+
+# python
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
