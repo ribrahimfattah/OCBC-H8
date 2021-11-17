@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 #### Introduction
 1. CRUD :heavy_check_mark:
-2. Realtions :heavy_check_mark:
+2. Relations :heavy_check_mark:
 3. Test has 4 unit test :heavy_check_mark:
 4. Deploy :heavy_check_mark:
 5. No Error :heavy_check_mark:
