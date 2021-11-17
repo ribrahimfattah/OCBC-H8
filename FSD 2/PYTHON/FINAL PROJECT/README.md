@@ -7,6 +7,18 @@
 ***
 
 ### INSTALLATION
+Create venv in empty folder
+```Jupyter
+py -m venv .
+```
+or
+
+Create venv in new folder
+```Jupyter
+py -m venv <NAME_FOLDER>
+```
+
+install packages
 ```Jupyter
 pip install -r requirements.txt
 ```
