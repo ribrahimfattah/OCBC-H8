@@ -24,8 +24,8 @@ class TestResponse(unittest.TestCase):
     """
     def test_get_all_directors(self):
         connex_app.app.testing = True
-        tester = connex_app.app.test_client(self)
-        response = tester.get('/api/directors')
+        con = connex_app.app.test_client(self)
+        response = con.get('/api/directors')
         self.assertEqual(response.status_code, 200)
 
     """
@@ -33,8 +33,8 @@ class TestResponse(unittest.TestCase):
     """
     def test_get_all_movies(self):
         connex_app.app.testing = True
-        tester = connex_app.app.test_client(self)
-        response = tester.get('/api/movies')
+        con = connex_app.app.test_client(self)
+        response = con.get('/api/movies')
         self.assertEqual(response.status_code, 200)
 
 

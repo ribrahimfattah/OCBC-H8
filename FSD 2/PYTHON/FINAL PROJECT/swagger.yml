@@ -454,7 +454,6 @@ paths:
         200:
           description: search movies by popularity
 
-#vote average
   
   /movies/rate/{rating}:
     get:
@@ -491,7 +490,6 @@ paths:
         200:
           description: search movies by rating
 
-# release_date
 
   /movies/release/after/{date}:
     get:
@@ -510,6 +508,7 @@ paths:
         200:
           description: search movies by more release date
 
+
   /movies/release/before/{date}:
     get:
       operationId: movies.get_by_before_date
@@ -526,6 +525,7 @@ paths:
       responses:
         200:
           description: search movies by less release date
+
 
   /movies/release/{date1}/{date2}:
     get:
@@ -624,6 +624,7 @@ paths:
               director_id:
                 type: integer
 
+                
   /director/{director_id}/movies/{movie_id}:
     get:
       operationId: movies.read_one
