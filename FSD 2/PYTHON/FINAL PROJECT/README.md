@@ -27,6 +27,6 @@ pip install -r requirements.txt
 **Heroku** : https://h8ocbc-milestone1-030.herokuapp.com/api/ui/ or click here [h8ocbc-milestone1-030](https://h8ocbc-milestone1-030.herokuapp.com/api/ui/)
 
 ##### Introductio
-1. CRUD &#9745
+1. CRUD :heavy_check_mark:
 2. 
 
