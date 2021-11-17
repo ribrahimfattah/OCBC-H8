@@ -456,6 +456,8 @@ paths:
 
   
   /movies/rate/{rating}:
+# ============ /movies/rate/{rating}
+# ===== GET
     get:
       operationId: movies.get_by_rating
       tags:
@@ -474,6 +476,8 @@ paths:
 
 
   /movies/top/{range}:
+# ============ /movies/top/{range}
+# ===== GET  
     get:
       operationId: movies.get_by_top_rating
       tags:
@@ -492,6 +496,8 @@ paths:
 
 
   /movies/release/after/{date}:
+# ============ /movies/release/after/{date}
+# ===== GET  
     get:
       operationId: movies.get_by_after_date
       tags:
@@ -510,6 +516,8 @@ paths:
 
 
   /movies/release/before/{date}:
+# ============ /movies/release/before/{date}
+# ===== GET  
     get:
       operationId: movies.get_by_before_date
       tags:
@@ -528,6 +536,8 @@ paths:
 
 
   /movies/release/{date1}/{date2}:
+# ============ /movies/release/{date1}/{date2}
+# ===== GET  
     get:
       operationId: movies.get_by_between_date
       tags:
@@ -551,6 +561,8 @@ paths:
 
 
   /director/{director_id}/movies:
+# ============ /director/{director_id}/movies
+# ===== GET  
     post:
       operationId: movies.create
       tags:
@@ -624,8 +636,10 @@ paths:
               director_id:
                 type: integer
 
-                
+
   /director/{director_id}/movies/{movie_id}:
+# ============ /director/{director_id}/movies/{movie_id}
+# ===== GET  
     get:
       operationId: movies.read_one
       tags:
@@ -676,6 +690,8 @@ paths:
               director_id:
                 type: integer
 
+# ============ /director/{director_id}/movies/{movie_id}
+# ===== PUT  
     put:
       operationId: movies.update
       tags:
@@ -756,6 +772,8 @@ paths:
               director_id:
                 type: integer
 
+# ============ /director/{director_id}/movies/{movie_id}
+# ===== DELETE  
     delete:
       operationId: movies.delete
       tags:
