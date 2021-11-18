@@ -20,7 +20,7 @@ class TestReturnList(unittest.TestCase):
 
 class TestResponse(unittest.TestCase):
     """
-    Test for response /api/directors/
+        Test for response /api/directors/
     """
     def test_get_all_directors(self):
         connex_app.app.testing = True
@@ -29,7 +29,7 @@ class TestResponse(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     """
-    Test for response /api/movies/
+        Test for response /api/movies/
     """
     def test_get_all_movies(self):
         connex_app.app.testing = True

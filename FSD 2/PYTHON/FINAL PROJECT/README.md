@@ -34,5 +34,6 @@ pip install -r requirements.txt
 5. No Error :heavy_check_mark:
 6. Documentation :heavy_check_mark:
 7. Validation :heavy_check_mark:
+8. 21 endpoint :heavy_check_mark:
  
 
