@@ -604,8 +604,6 @@ paths:
                 type: string
               uid:
                 type: integer
-              director_id:
-                type: integer
       responses:
         201:
           description: Successfully created a movies
@@ -714,8 +712,6 @@ paths:
           schema:
             type: object
             properties:
-              id:
-                type: integer
               original_title:
                 type: string
               budget:
@@ -736,10 +732,6 @@ paths:
                 type: string
               tagline:
                 type: string
-              uid:
-                type: integer
-              director_id:
-                type: integer
       responses:
         200:
           description: Successfully updated Movies
@@ -767,8 +759,6 @@ paths:
                 type: string
               tagline:
                 type: string
-              uid:
-                type: integer
               director_id:
                 type: integer
 
