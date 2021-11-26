@@ -1,0 +1,19 @@
+ul>li {
+    border: 1px solid turquoise;
+    padding: 10px;
+    margin: 10px;
+}
+
+.antri {
+    animation: antri 3s ease;
+}
+
+@keyframes antri {
+    0% {
+        transform: translateX(650px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
